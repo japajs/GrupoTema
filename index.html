@@ -109,9 +109,22 @@
     .reveal.js-ready{opacity:0;transform:translateY(28px)}
     .reveal.visible{opacity:1;transform:none}
 
+    /* ════════ TOP BAR ════════ */
+    #topbar{background:var(--navy-d);border-bottom:1px solid rgba(255,255,255,.07);padding:7px 0;position:fixed;top:0;left:0;right:0;z-index:1001;transition:transform .3s ease}
+    #topbar.hidden{transform:translateY(-100%)}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .topbar-left{display:flex;align-items:center;gap:20px}
+    .topbar-item{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.72);font-size:12.5px;font-weight:500;transition:color .2s}
+    .topbar-item:hover{color:#fff}
+    .topbar-item i{font-size:11px;color:var(--red)}
+    .topbar-right{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.45)}
+    .topbar-right i{color:var(--red);font-size:11px}
+    @media(max-width:640px){#topbar{display:none}}
+
     /* ════════ HEADER ════════ */
-    #hdr{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:all .3s ease}
+    #hdr{position:fixed;top:34px;left:0;right:0;z-index:1000;padding:16px 0;transition:all .3s ease}
     #hdr.scrolled{
+      top:0;
       background:rgba(7,24,48,.97);
       -webkit-backdrop-filter:blur(20px);
       backdrop-filter:blur(20px);
@@ -124,7 +137,7 @@
     .logo-text strong{display:block;font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
     .logo-text span{font-size:11px;font-weight:400;opacity:.75;letter-spacing:.04em}
 
-    nav a{color:rgba(255,255,255,.88);font-size:14px;font-weight:500;position:relative;transition:color .2s;padding:4px 0}
+    nav a{color:rgba(255,255,255,.88);font-size:14px;font-weight:600;position:relative;transition:color .2s;padding:4px 0;letter-spacing:.01em}
     nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--red);border-radius:2px;transition:width .25s}
     nav a:hover{color:#fff}
     nav a:hover::after,nav a:focus-visible::after{width:100%}
@@ -170,7 +183,7 @@
       min-height:100vh;
       background:linear-gradient(135deg,var(--navy-d) 0%,var(--navy) 55%,#1a3c6c 100%);
       position:relative;display:flex;align-items:center;
-      padding:120px 0 80px;overflow:hidden;
+      padding:150px 0 80px;overflow:hidden;
     }
     .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
     .hero-glow1{position:absolute;top:-80px;right:-80px;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(220,38,38,.12) 0%,transparent 68%);pointer-events:none}
@@ -479,6 +492,25 @@
 <!-- FIX: Skip link para teclado/leitor de tela -->
 <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
+<!-- TOP BAR -->
+<div id="topbar" aria-label="Informações de contato rápido">
+  <div class="container">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <a href="tel:6433224404" class="topbar-item">
+          <i class="fas fa-phone" aria-hidden="true"></i> (64) 3322-4404
+        </a>
+        <a href="mailto:temaorganizacaocontabil@gmail.com" class="topbar-item">
+          <i class="fas fa-envelope" aria-hidden="true"></i> temaorganizacaocontabil@gmail.com
+        </a>
+      </div>
+      <div class="topbar-right">
+        <i class="fas fa-clock" aria-hidden="true"></i> Seg–Sex: 08h–18h
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- FIX: role=dialog + aria-modal + aria-label no menu mobile -->
 <div class="mob-nav" id="mobNav" role="dialog" aria-modal="true" aria-label="Menu de navegação">
   <button class="mob-close" id="mobClose" aria-label="Fechar menu">
@@ -519,11 +551,8 @@
         <a href="https://appcondo-gt.web.app/home" class="btn btn-portal btn-sm" target="_blank" rel="noopener noreferrer" aria-label="Área do Cliente — acessar aplicativo">
           <i class="fas fa-grid-2" aria-hidden="true"></i> Área do Cliente
         </a>
-        <a href="tel:6433224404" class="btn btn-outline btn-sm">
-          <i class="fas fa-phone" aria-hidden="true"></i> (64) 3322-4404
-        </a>
         <a href="https://wa.me/5564993323131?text=Olá!%20Gostaria%20de%20um%20atendimento%20da%20Grupo%20Tema." class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar agora
         </a>
       </div>
       <!-- FIX: aria-expanded + aria-controls no hambúrguer -->
@@ -1137,10 +1166,13 @@
 </div>
 
 <script>
-  // ── Header scroll
-  const hdr = document.getElementById('hdr');
+  // ── Header + topbar scroll
+  const hdr    = document.getElementById('hdr');
+  const topbar = document.getElementById('topbar');
   window.addEventListener('scroll', () => {
-    hdr.classList.toggle('scrolled', window.scrollY > 60);
+    const scrolled = window.scrollY > 60;
+    hdr.classList.toggle('scrolled', scrolled);
+    if (topbar) topbar.classList.toggle('hidden', scrolled);
   }, { passive: true });
 
   // ── Mobile menu + FIX: aria-expanded + focus trap
