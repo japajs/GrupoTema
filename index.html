@@ -413,6 +413,25 @@
     .ft-badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.65);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:6px 14px}
     .ft-badge i{color:var(--red)}
 
+    /* ════════ TRABALHE CONOSCO ════════ */
+    #trabalhe{padding:88px 0;background:linear-gradient(135deg,var(--navy-d) 0%,var(--navy) 100%);position:relative;overflow:hidden}
+    #trabalhe::before{content:'';position:absolute;top:-100px;right:-100px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(220,38,38,.07) 0%,transparent 65%);pointer-events:none}
+    .trab-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+    .trab-tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--red);background:rgba(220,38,38,.12);border-radius:100px;padding:5px 14px;margin-bottom:16px}
+    .trab-title{font-size:clamp(26px,4vw,38px);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1.2;margin-bottom:14px}
+    .trab-sub{font-size:16px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:28px}
+    .trab-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+    .trab-item{display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(255,255,255,.85)}
+    .trab-item i{color:var(--red);font-size:14px;flex-shrink:0}
+    .trab-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:36px;text-align:center}
+    .trab-card-icon{width:72px;height:72px;border-radius:20px;background:rgba(220,38,38,.15);display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--red);margin:0 auto 20px}
+    .trab-card h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:10px}
+    .trab-card > p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:24px}
+    .trab-steps{display:flex;flex-direction:column;gap:14px;text-align:left;margin-bottom:28px}
+    .trab-step{display:flex;align-items:flex-start;gap:12px}
+    .trab-step-num{width:24px;height:24px;min-width:24px;border-radius:50%;background:var(--red);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+    .trab-step-txt{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5}
+
     /* ════════ WHATSAPP FLOAT ════════ */
     .wa-float{position:fixed;bottom:30px;right:30px;z-index:900;display:flex;align-items:center}
     .wa-btn{
@@ -473,6 +492,7 @@
       .ft-top{grid-template-columns:1fr}
       .ft-bot{flex-direction:column;text-align:center}
       .form-grid{grid-template-columns:1fr}
+      .trab-inner{grid-template-columns:1fr;gap:40px}
     }
     @media(max-width:540px){
       .srv-grid{grid-template-columns:1fr}
@@ -1090,6 +1110,54 @@
   </div>
 </section>
 
+<!-- TRABALHE CONOSCO -->
+<section id="trabalhe" aria-labelledby="trabalhe-title">
+  <div class="container">
+    <div class="trab-inner">
+      <div class="reveal">
+        <div class="trab-tag"><i class="fas fa-users" aria-hidden="true"></i> Faça parte do time</div>
+        <h2 class="trab-title" id="trabalhe-title">Trabalhe <span style="color:var(--red)">Conosco</span></h2>
+        <p class="trab-sub">O Grupo Tema está sempre em busca de profissionais comprometidos com a excelência contábil. Se você quer crescer em uma empresa sólida com mais de 30 anos de mercado, envie seu currículo.</p>
+        <ul class="trab-list" aria-label="Perfis que buscamos">
+          <li class="trab-item"><i class="fas fa-circle-check" aria-hidden="true"></i> Profissionais da área contábil e fiscal</li>
+          <li class="trab-item"><i class="fas fa-circle-check" aria-hidden="true"></i> Auxiliares e assistentes administrativos</li>
+          <li class="trab-item"><i class="fas fa-circle-check" aria-hidden="true"></i> Estudantes de Ciências Contábeis para estágio</li>
+          <li class="trab-item"><i class="fas fa-circle-check" aria-hidden="true"></i> Perfil proativo, organizado e comprometido</li>
+        </ul>
+        <a href="https://wa.me/5564993323131?text=Olá!%20Tenho%20interesse%20em%20fazer%20parte%20da%20equipe%20do%20Grupo%20Tema.%20Gostaria%20de%20enviar%20meu%20currículo%20para%20avaliação." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar currículo pelo WhatsApp
+        </a>
+      </div>
+      <div class="trab-card reveal">
+        <div class="trab-card-icon" aria-hidden="true"><i class="fas fa-briefcase"></i></div>
+        <h3>Como enviar seu currículo</h3>
+        <p>É rápido e simples. Siga os passos abaixo.</p>
+        <ol class="trab-steps" aria-label="Passos para envio do currículo">
+          <li class="trab-step">
+            <span class="trab-step-num" aria-hidden="true">1</span>
+            <span class="trab-step-txt">Clique no botão abaixo — abrirá uma conversa no WhatsApp com mensagem pré-preenchida</span>
+          </li>
+          <li class="trab-step">
+            <span class="trab-step-num" aria-hidden="true">2</span>
+            <span class="trab-step-txt">Envie a mensagem para nos avisar do seu interesse</span>
+          </li>
+          <li class="trab-step">
+            <span class="trab-step-num" aria-hidden="true">3</span>
+            <span class="trab-step-txt">Anexe seu currículo em PDF diretamente na conversa</span>
+          </li>
+          <li class="trab-step">
+            <span class="trab-step-num" aria-hidden="true">4</span>
+            <span class="trab-step-txt">Nossa equipe analisa seu perfil e entra em contato</span>
+          </li>
+        </ol>
+        <a href="https://wa.me/5564993323131?text=Olá!%20Tenho%20interesse%20em%20fazer%20parte%20da%20equipe%20do%20Grupo%20Tema.%20Gostaria%20de%20enviar%20meu%20currículo%20para%20avaliação." class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Quero enviar meu currículo
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main><!-- /main -->
 
 <!-- FOOTER -->
@@ -1125,6 +1193,7 @@
           <a href="#testi">Depoimentos</a>
           <a href="#faq">Perguntas frequentes</a>
           <a href="#contact">Contato</a>
+          <a href="#trabalhe">Trabalhe conosco</a>
           <a href="https://appcondo-gt.web.app/home" target="_blank" rel="noopener noreferrer" style="color:var(--red);font-weight:700"><i class="fas fa-grid-2" aria-hidden="true" style="margin-right:6px"></i>Área do Cliente</a>
         </div>
       </nav>
