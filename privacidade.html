@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Política de Privacidade da Grupo Tema Organização Contábil — como coletamos, usamos e protegemos seus dados pessoais conforme a LGPD.">
+  <meta name="robots" content="noindex, follow">
+  <title>Política de Privacidade | Grupo Tema</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --navy:#0B2545;--navy-l:#1A3D6E;--navy-d:#071830;
+      --red:#DC2626;--red-d:#B91C1C;
+      --white:#fff;--off:#F8FAFC;
+      --g100:#F1F5F9;--g200:#E2E8F0;--g400:#94A3B8;--g500:#64748B;--g600:#475569;--g700:#334155;--g900:#0F172A;
+      --r:14px;--r-sm:8px;
+      --tr:.28s cubic-bezier(.4,0,.2,1);
+      --sh-sm:0 1px 3px rgba(0,0,0,.08);
+      --sh-md:0 4px 16px rgba(0,0,0,.10);
+    }
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--g700);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    :focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
+
+    /* HEADER */
+    .pp-header{background:var(--navy-d);padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .container{max-width:900px;margin:0 auto;padding:0 24px}
+    .pp-header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px;color:#fff}
+    .logo-icon{width:40px;height:40px;border-radius:10px;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;letter-spacing:-.5px;color:#fff;flex-shrink:0}
+    .logo-text{font-size:16px;font-weight:800;color:#fff;letter-spacing:-.02em}
+    .logo-sub{font-size:11px;font-weight:500;color:rgba(255,255,255,.55);display:block;margin-top:1px}
+    .back-btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:rgba(255,255,255,.7);transition:color .2s}
+    .back-btn:hover{color:#fff}
+
+    /* HERO */
+    .pp-hero{background:var(--navy);padding:56px 0 48px}
+    .pp-hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--red);background:rgba(220,38,38,.12);border-radius:100px;padding:5px 14px;margin-bottom:16px}
+    .pp-hero h1{font-size:clamp(28px,5vw,42px);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px}
+    .pp-hero p{font-size:16px;color:rgba(255,255,255,.7);max-width:620px;line-height:1.7}
+    .pp-meta{display:flex;flex-wrap:wrap;gap:20px;margin-top:24px}
+    .pp-meta-item{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.55)}
+    .pp-meta-item i{color:var(--red);font-size:12px}
+
+    /* CONTENT */
+    .pp-content{padding:64px 0 80px}
+    .pp-toc{background:var(--off);border:1px solid var(--g200);border-radius:var(--r);padding:28px 32px;margin-bottom:56px}
+    .pp-toc-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--g500);margin-bottom:14px}
+    .pp-toc ol{padding-left:18px;display:flex;flex-direction:column;gap:6px}
+    .pp-toc a{font-size:14px;color:var(--navy-l);font-weight:500;transition:color .2s}
+    .pp-toc a:hover{color:var(--red)}
+
+    .pp-section{margin-bottom:52px;scroll-margin-top:24px}
+    .pp-section-num{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--red);margin-bottom:8px}
+    .pp-section h2{font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid var(--g100)}
+    .pp-section p{font-size:15px;color:var(--g600);margin-bottom:14px}
+    .pp-section p:last-child{margin-bottom:0}
+    .pp-section ul,.pp-section ol{padding-left:20px;display:flex;flex-direction:column;gap:8px;margin:14px 0}
+    .pp-section li{font-size:15px;color:var(--g600)}
+    .pp-section strong{color:var(--g700);font-weight:600}
+
+    .info-box{background:rgba(220,38,38,.05);border:1px solid rgba(220,38,38,.15);border-radius:var(--r-sm);padding:18px 22px;margin:18px 0;display:flex;gap:14px;align-items:flex-start}
+    .info-box i{color:var(--red);font-size:16px;margin-top:2px;flex-shrink:0}
+    .info-box p{margin:0;font-size:14px;color:var(--g600)}
+
+    .neutral-box{background:var(--off);border:1px solid var(--g200);border-radius:var(--r-sm);padding:18px 22px;margin:18px 0}
+    .neutral-box p{margin:0;font-size:14px;color:var(--g600)}
+
+    .rights-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+    .right-card{background:var(--off);border:1px solid var(--g200);border-radius:var(--r-sm);padding:18px 20px}
+    .right-card i{font-size:18px;color:var(--red);margin-bottom:10px;display:block}
+    .right-card strong{font-size:14px;font-weight:700;color:var(--navy);display:block;margin-bottom:4px}
+    .right-card span{font-size:13px;color:var(--g500);line-height:1.5}
+
+    /* FOOTER */
+    .pp-footer{background:var(--navy-d);padding:32px 0;border-top:1px solid rgba(255,255,255,.08)}
+    .pp-footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .pp-footer p{font-size:13px;color:rgba(255,255,255,.5)}
+    .pp-footer a{color:rgba(255,255,255,.7);transition:color .2s}
+    .pp-footer a:hover{color:#fff}
+
+    @media(max-width:600px){
+      .pp-hero{padding:40px 0 36px}
+      .pp-content{padding:40px 0 60px}
+      .rights-grid{grid-template-columns:1fr}
+      .pp-header-inner .back-btn span{display:none}
+      .pp-footer-inner{flex-direction:column;text-align:center}
+    }
+  </style>
+</head>
+<body>
+
+<header class="pp-header">
+  <div class="container">
+    <div class="pp-header-inner">
+      <a href="index.html" class="logo" aria-label="Grupo Tema — voltar para o site">
+        <div class="logo-icon" aria-hidden="true">GT</div>
+        <div>
+          <span class="logo-text">Grupo Tema</span>
+          <span class="logo-sub">Organização Contábil</span>
+        </div>
+      </a>
+      <a href="index.html" class="back-btn" aria-label="Voltar para o site principal">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        <span>Voltar ao site</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="pp-hero">
+  <div class="container">
+    <div class="pp-hero-tag"><i class="fas fa-shield-halved" aria-hidden="true"></i> LGPD — Lei 13.709/2018</div>
+    <h1>Política de Privacidade</h1>
+    <p>Transparência sobre como coletamos, utilizamos e protegemos as informações que você nos fornece ao entrar em contato com a Grupo Tema.</p>
+    <div class="pp-meta">
+      <div class="pp-meta-item"><i class="fas fa-calendar" aria-hidden="true"></i> Última atualização: junho de 2026</div>
+      <div class="pp-meta-item"><i class="fas fa-building" aria-hidden="true"></i> CNPJ: 14.850.931/0001-93</div>
+    </div>
+  </div>
+</section>
+
+<main class="pp-content" id="main-content">
+  <div class="container">
+
+    <nav class="pp-toc" aria-label="Índice da Política de Privacidade">
+      <p class="pp-toc-title">Índice</p>
+      <ol>
+        <li><a href="#s1">Quem somos (Controlador dos Dados)</a></li>
+        <li><a href="#s2">Quais dados coletamos</a></li>
+        <li><a href="#s3">Para que usamos seus dados</a></li>
+        <li><a href="#s4">Base legal para o tratamento</a></li>
+        <li><a href="#s5">Compartilhamento de dados com terceiros</a></li>
+        <li><a href="#s6">Armazenamento e retenção</a></li>
+        <li><a href="#s7">Seus direitos como titular</a></li>
+        <li><a href="#s8">Cookies e tecnologias de rastreamento</a></li>
+        <li><a href="#s9">Segurança das informações</a></li>
+        <li><a href="#s10">Contato e canal do Encarregado (DPO)</a></li>
+        <li><a href="#s11">Alterações nesta política</a></li>
+      </ol>
+    </nav>
+
+    <section class="pp-section" id="s1">
+      <p class="pp-section-num">01</p>
+      <h2>Quem somos — Controlador dos Dados</h2>
+      <p>O <strong>Controlador dos seus dados pessoais</strong> é:</p>
+      <div class="neutral-box">
+        <p><strong>Razão Social:</strong> Tema Organização Contábil Ltda<br>
+        <strong>Nome Fantasia:</strong> Grupo Tema<br>
+        <strong>CNPJ:</strong> 14.850.931/0001-93<br>
+        <strong>E-mail:</strong> <a href="mailto:temaorganizacaocontabil@gmail.com" style="color:var(--red)">temaorganizacaocontabil@gmail.com</a><br>
+        <strong>Telefone:</strong> (64) 3322-4404<br>
+        <strong>Estado:</strong> Goiás, Brasil</p>
+      </div>
+      <p>Esta Política de Privacidade aplica-se exclusivamente ao site <strong>grupotema.vercel.app</strong> e ao formulário de contato nele disponibilizado.</p>
+    </section>
+
+    <section class="pp-section" id="s2">
+      <p class="pp-section-num">02</p>
+      <h2>Quais dados coletamos</h2>
+      <p>Quando você preenche nosso formulário de contato, coletamos os seguintes dados:</p>
+      <ul>
+        <li><strong>Nome completo</strong> — para identificação no atendimento</li>
+        <li><strong>Número de telefone/WhatsApp</strong> — para retorno do contato</li>
+        <li><strong>Endereço de e-mail</strong> — para comunicação escrita</li>
+        <li><strong>Tipo de empresa ou CNPJ</strong> — para entender o perfil do seu negócio</li>
+        <li><strong>Mensagem livre</strong> — para compreender sua necessidade</li>
+      </ul>
+      <div class="info-box">
+        <i class="fas fa-circle-info" aria-hidden="true"></i>
+        <p>Não coletamos dados sensíveis (saúde, biometria, etnia, religião, etc.), dados de menores de 18 anos, nem dados de cartão de crédito ou informações bancárias.</p>
+      </div>
+    </section>
+
+    <section class="pp-section" id="s3">
+      <p class="pp-section-num">03</p>
+      <h2>Para que usamos seus dados</h2>
+      <p>Seus dados são utilizados exclusivamente para:</p>
+      <ul>
+        <li>Responder à sua solicitação de contato ou orçamento</li>
+        <li>Apresentar nossos serviços contábeis de acordo com o perfil da sua empresa</li>
+        <li>Agendar reunião ou visita conforme sua necessidade</li>
+      </ul>
+      <p>Não utilizamos seus dados para envio de e-mail marketing, listas de transmissão ou qualquer comunicação não solicitada por você.</p>
+    </section>
+
+    <section class="pp-section" id="s4">
+      <p class="pp-section-num">04</p>
+      <h2>Base legal para o tratamento</h2>
+      <p>O tratamento dos seus dados pessoais é fundamentado nas seguintes bases legais previstas na <strong>Lei Geral de Proteção de Dados (LGPD — Lei 13.709/2018)</strong>:</p>
+      <ul>
+        <li><strong>Art. 7º, V — Execução de contrato ou procedimentos preliminares:</strong> quando você solicita informações sobre nossos serviços, o tratamento é necessário para atender sua solicitação antes de uma eventual contratação.</li>
+        <li><strong>Art. 7º, IX — Legítimo interesse do controlador:</strong> para responder a contatos espontâneos e apresentar nossos serviços, de forma proporcional e com respeito às suas expectativas.</li>
+      </ul>
+    </section>
+
+    <section class="pp-section" id="s5">
+      <p class="pp-section-num">05</p>
+      <h2>Compartilhamento de dados com terceiros</h2>
+      <p>Ao clicar em <strong>"Enviar mensagem"</strong> no formulário, você é redirecionado ao WhatsApp. Nesse momento, os dados que você preencheu são transmitidos diretamente ao aplicativo WhatsApp, de propriedade da <strong>Meta Platforms, Inc.</strong></p>
+      <div class="info-box">
+        <i class="fas fa-triangle-exclamation" aria-hidden="true"></i>
+        <p>A Grupo Tema <strong>não armazena</strong> seus dados em servidores próprios. O tratamento posterior ocorre dentro do WhatsApp, sujeito à <a href="https://www.whatsapp.com/legal/privacy-policy-eea" target="_blank" rel="noopener noreferrer" style="color:var(--red)">Política de Privacidade da Meta</a>. Recomendamos consultá-la para entender como a Meta trata seus dados.</p>
+      </div>
+      <p>Não vendemos, alugamos ou cedemos seus dados a quaisquer outras empresas, parceiros ou anunciantes.</p>
+    </section>
+
+    <section class="pp-section" id="s6">
+      <p class="pp-section-num">06</p>
+      <h2>Armazenamento e retenção</h2>
+      <p>Este site é uma página estática hospedada na plataforma <strong>Vercel</strong>. <strong>Não possuímos banco de dados</strong>, formulário com backend ou qualquer mecanismo de armazenamento próprio dos dados que você preenche.</p>
+      <p>Os dados fornecidos no formulário existem apenas no seu navegador até o momento do redirecionamento ao WhatsApp. A partir daí, a conversa é retida no WhatsApp pelo tempo determinado pelas políticas da Meta.</p>
+      <p>Comunicações iniciadas por e-mail ou telefone diretamente conosco podem ser retidas em nossos sistemas internos pelo tempo necessário ao atendimento e em conformidade com obrigações legais fiscais e contábeis (em geral, 5 anos, conforme legislação tributária brasileira).</p>
+    </section>
+
+    <section class="pp-section" id="s7">
+      <p class="pp-section-num">07</p>
+      <h2>Seus direitos como titular</h2>
+      <p>Conforme o <strong>Art. 18 da LGPD</strong>, você tem os seguintes direitos em relação aos seus dados pessoais:</p>
+      <div class="rights-grid">
+        <div class="right-card">
+          <i class="fas fa-eye" aria-hidden="true"></i>
+          <strong>Confirmação e Acesso</strong>
+          <span>Confirmar a existência de tratamento e acessar seus dados.</span>
+        </div>
+        <div class="right-card">
+          <i class="fas fa-pen" aria-hidden="true"></i>
+          <strong>Correção</strong>
+          <span>Solicitar a correção de dados incompletos, inexatos ou desatualizados.</span>
+        </div>
+        <div class="right-card">
+          <i class="fas fa-trash" aria-hidden="true"></i>
+          <strong>Eliminação</strong>
+          <span>Pedir a exclusão de dados desnecessários ou tratados em desconformidade com a lei.</span>
+        </div>
+        <div class="right-card">
+          <i class="fas fa-hand" aria-hidden="true"></i>
+          <strong>Oposição</strong>
+          <span>Opor-se ao tratamento realizado com fundamento em legítimo interesse.</span>
+        </div>
+        <div class="right-card">
+          <i class="fas fa-file-export" aria-hidden="true"></i>
+          <strong>Portabilidade</strong>
+          <span>Solicitar a portabilidade dos seus dados a outro fornecedor de serviço.</span>
+        </div>
+        <div class="right-card">
+          <i class="fas fa-circle-xmark" aria-hidden="true"></i>
+          <strong>Revogação do consentimento</strong>
+          <span>Retirar o consentimento a qualquer momento, quando esse for a base legal.</span>
+        </div>
+      </div>
+      <p>Para exercer qualquer um desses direitos, entre em contato conosco pelo canal indicado na seção 10 desta política. Responderemos em até <strong>15 dias</strong> conforme previsto na LGPD.</p>
+    </section>
+
+    <section class="pp-section" id="s8">
+      <p class="pp-section-num">08</p>
+      <h2>Cookies e tecnologias de rastreamento</h2>
+      <p>Este site utiliza recursos de terceiros que podem coletar dados de navegação automaticamente:</p>
+      <ul>
+        <li><strong>Google Fonts (Google LLC):</strong> carregamos a fonte "Inter" do servidor do Google. Isso implica que o Google pode registrar o endereço IP e informações técnicas do seu navegador ao acessar nossa página. Consulte a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--red)">Política de Privacidade do Google</a>.</li>
+        <li><strong>Font Awesome (Fonticons, Inc.):</strong> carregamos ícones visuais do CDN da Cloudflare. Podem ser registrados dados técnicos de acesso. Consulte a <a href="https://fontawesome.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--red)">Política de Privacidade do Font Awesome</a>.</li>
+        <li><strong>Vercel (Vercel Inc.):</strong> nosso servidor de hospedagem pode registrar logs de acesso padrão (IP, data/hora, URL). Consulte a <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style="color:var(--red)">Política de Privacidade da Vercel</a>.</li>
+      </ul>
+      <p>Não utilizamos cookies próprios, scripts de analytics ou pixels de rastreamento (Facebook Pixel, Google Analytics, etc.).</p>
+    </section>
+
+    <section class="pp-section" id="s9">
+      <p class="pp-section-num">09</p>
+      <h2>Segurança das informações</h2>
+      <p>Adotamos medidas técnicas para proteger a comunicação entre seu navegador e nosso site:</p>
+      <ul>
+        <li><strong>HTTPS com HSTS:</strong> toda comunicação é criptografada via TLS. O HSTS garante que seu navegador só acesse o site por HTTPS.</li>
+        <li><strong>Content Security Policy (CSP):</strong> restringe as origens de conteúdo carregadas pela página, reduzindo o risco de injeção de scripts maliciosos.</li>
+        <li><strong>X-Frame-Options: DENY:</strong> impede que o site seja incorporado em iframes de terceiros (proteção contra clickjacking).</li>
+        <li><strong>Permissions-Policy:</strong> bloqueia o acesso de scripts de terceiros à câmera, microfone e geolocalização do seu dispositivo.</li>
+        <li><strong>Subresource Integrity (SRI):</strong> verificação de integridade dos arquivos de ícones carregados de CDN externo.</li>
+      </ul>
+      <p>Como não armazenamos dados pessoais em servidores próprios, o risco de vazamento no nosso ambiente é estruturalmente eliminado para os dados do formulário de contato.</p>
+    </section>
+
+    <section class="pp-section" id="s10">
+      <p class="pp-section-num">10</p>
+      <h2>Contato e canal do Encarregado (DPO)</h2>
+      <p>Para exercer seus direitos como titular de dados, tirar dúvidas sobre esta política ou registrar uma reclamação, entre em contato pelo canal abaixo:</p>
+      <div class="neutral-box">
+        <p><strong>Encarregado pelo Tratamento de Dados Pessoais</strong><br>
+        Grupo Tema Organização Contábil<br>
+        <strong>E-mail:</strong> <a href="mailto:temaorganizacaocontabil@gmail.com" style="color:var(--red)">temaorganizacaocontabil@gmail.com</a><br>
+        <strong>Telefone:</strong> (64) 3322-4404<br>
+        <strong>Prazo de resposta:</strong> até 15 dias úteis</p>
+      </div>
+      <p>Você também pode registrar reclamações perante a <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong>, por meio do site <a href="https://www.gov.br/anpd" target="_blank" rel="noopener noreferrer" style="color:var(--red)">gov.br/anpd</a>.</p>
+    </section>
+
+    <section class="pp-section" id="s11">
+      <p class="pp-section-num">11</p>
+      <h2>Alterações nesta política</h2>
+      <p>Esta Política de Privacidade pode ser atualizada periodicamente para refletir mudanças nos nossos serviços, nas práticas de tratamento de dados ou em decorrência de alterações legais.</p>
+      <p>A data da última atualização é indicada no topo desta página. Em caso de alterações relevantes, publicaremos aviso em destaque em nosso site. Recomendamos que você revise esta política periodicamente.</p>
+      <p>O uso continuado do site após publicação de alterações implica aceitação da versão atualizada.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="pp-footer">
+  <div class="container">
+    <div class="pp-footer-inner">
+      <p>© 2026 Grupo Tema Organização Contábil · CNPJ: 14.850.931/0001-93</p>
+      <p><a href="index.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar ao site</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
