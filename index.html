@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grupo Tema Organização Contábil — mais de 30 anos cuidando da contabilidade de empresas em Goiás. Abertura de empresa, folha de pagamento, IR e planejamento tributário.">
+  <meta name="theme-color" content="#0B2545">
+  <title>Grupo Tema | Contabilidade que faz seu negócio crescer</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ── RESET ── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+    /* ── TOKENS ── */
+    :root{
+      --navy:#0B2545;--navy-l:#1A3D6E;--navy-d:#071830;
+      --red:#DC2626;--red-d:#B91C1C;
+      --white:#fff;--off:#F8FAFC;
+      --g100:#F1F5F9;--g200:#E2E8F0;--g400:#94A3B8;--g500:#64748B;--g600:#475569;--g700:#334155;--g900:#0F172A;
+      --green:#059669;
+      --sh-sm:0 1px 3px rgba(0,0,0,.08);
+      --sh-md:0 4px 16px rgba(0,0,0,.10);
+      --sh-lg:0 10px 32px rgba(0,0,0,.13);
+      --sh-xl:0 20px 48px rgba(11,37,69,.2);
+      --r:14px;--r-sm:8px;--r-lg:24px;
+      --tr:.28s cubic-bezier(.4,0,.2,1);
+    }
+
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--g700);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+
+    /* ── SKIP LINK (FIX: acessibilidade teclado) ── */
+    .skip-link{
+      position:absolute;top:-100%;left:16px;
+      background:var(--navy);color:#fff;
+      padding:12px 24px;border-radius:0 0 8px 8px;
+      font-size:15px;font-weight:700;z-index:9999;
+      transition:top .2s;
+    }
+    .skip-link:focus{top:0;outline:3px solid var(--red);outline-offset:2px}
+
+    /* ── FOCUS STYLES (FIX: visibilidade teclado) ── */
+    :focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
+    button:focus-visible,a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+    /* ── LAYOUT ── */
+    .container{max-width:1160px;margin:0 auto;padding:0 24px}
+
+    /* ── TYPE ── */
+    .tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--red);background:rgba(220,38,38,.1);border-radius:100px;padding:6px 14px;margin-bottom:16px}
+    .sec-title{font-size:clamp(26px,4vw,44px);font-weight:900;color:var(--navy);line-height:1.15;letter-spacing:-.03em;margin-bottom:14px}
+    .sec-title span{color:var(--red)}
+    .sec-sub{font-size:17px;color:var(--g600);line-height:1.75;max-width:600px}
+
+    /* ── BUTTONS (FIX: touch target mínimo 44px) ── */
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      font-family:inherit;font-size:16px;font-weight:600;
+      border-radius:100px;padding:14px 28px;
+      cursor:pointer;border:none;transition:var(--tr);
+      white-space:nowrap;line-height:1;
+      min-height:44px;
+    }
+    .btn-primary{background:var(--red);color:#fff}
+    .btn-primary:hover{background:var(--red-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(220,38,38,.4)}
+    .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
+    .btn-outline:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.85)}
+    .btn-navy{background:var(--navy);color:#fff}
+    .btn-navy:hover{background:var(--navy-l);transform:translateY(-2px);box-shadow:var(--sh-lg)}
+    .btn-sm{padding:11px 22px;font-size:15px;min-height:44px}
+
+    /* ── REVEAL (FIX: visível por padrão; anima só se JS rodar) ── */
+    .reveal{transition:opacity .6s ease,transform .6s ease}
+    .reveal.js-ready{opacity:0;transform:translateY(28px)}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* ════════ HEADER ════════ */
+    #hdr{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:all .3s ease}
+    #hdr.scrolled{
+      background:rgba(7,24,48,.97);
+      -webkit-backdrop-filter:blur(20px);
+      backdrop-filter:blur(20px);
+      padding:13px 0;
+      box-shadow:0 2px 24px rgba(0,0,0,.22)
+    }
+    .hdr-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{display:flex;align-items:center;gap:12px;color:#fff}
+    .logo-icon{width:42px;height:42px;background:var(--red);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:900;color:#fff;flex-shrink:0;letter-spacing:-.05em}
+    .logo-text strong{display:block;font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+    .logo-text span{font-size:11px;font-weight:400;opacity:.75;letter-spacing:.04em}
+
+    nav a{color:rgba(255,255,255,.88);font-size:14px;font-weight:500;position:relative;transition:color .2s;padding:4px 0}
+    nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--red);border-radius:2px;transition:width .25s}
+    nav a:hover{color:#fff}
+    nav a:hover::after,nav a:focus-visible::after{width:100%}
+    .hdr-right{display:flex;align-items:center;gap:10px}
+
+    /* Hamburger (FIX: touch target 44×44px) */
+    .hamburger{
+      display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;
+      cursor:pointer;background:none;border:none;
+      width:44px;height:44px;border-radius:8px;
+      flex-shrink:0;
+    }
+    .hamburger:hover{background:rgba(255,255,255,.1)}
+    .hamburger span{display:block;height:2px;background:#fff;border-radius:2px;transition:var(--tr);pointer-events:none}
+    .hamburger span:nth-child(1){width:22px}
+    .hamburger span:nth-child(2){width:16px}
+    .hamburger span:nth-child(3){width:22px}
+    .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);width:22px}
+    .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    /* Mobile nav (FIX: role dialog, focus trap) */
+    .mob-nav{
+      display:none;position:fixed;inset:0;
+      background:var(--navy-d);z-index:999;
+      flex-direction:column;align-items:center;justify-content:center;gap:32px;
+    }
+    .mob-nav.open{display:flex}
+    /* FIX: tamanho mínimo de toque nos links do menu */
+    .mob-nav a{color:#fff;font-size:24px;font-weight:700;min-height:48px;display:flex;align-items:center}
+    .mob-close{
+      position:absolute;top:20px;right:20px;
+      background:rgba(255,255,255,.1);border:none;color:#fff;
+      width:44px;height:44px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-size:20px;cursor:pointer;transition:var(--tr);
+    }
+    .mob-close:hover{background:rgba(255,255,255,.2)}
+    .mob-nav .btn{font-size:16px;padding:16px 36px}
+
+    /* ════════ HERO ════════ */
+    #hero{
+      min-height:100vh;
+      background:linear-gradient(135deg,var(--navy-d) 0%,var(--navy) 55%,#1a3c6c 100%);
+      position:relative;display:flex;align-items:center;
+      padding:120px 0 80px;overflow:hidden;
+    }
+    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+    .hero-glow1{position:absolute;top:-80px;right:-80px;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(220,38,38,.12) 0%,transparent 68%);pointer-events:none}
+    .hero-glow2{position:absolute;bottom:-160px;left:-60px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.04) 0%,transparent 65%);pointer-events:none}
+    .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;width:100%}
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+      border-radius:100px;padding:9px 18px;
+      /* FIX: contraste — cor mais opaca */
+      color:rgba(255,255,255,.95);font-size:13px;font-weight:500;
+      margin-bottom:28px;
+      -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+    }
+    .hero-badge i{color:var(--red)}
+    .hero-title{font-size:clamp(34px,5vw,66px);font-weight:900;color:#fff;line-height:1.07;letter-spacing:-.04em;margin-bottom:22px}
+    .hero-title .hl{color:var(--red)}
+    /* FIX: contraste — de .72 para .92 */
+    .hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.92);line-height:1.75;margin-bottom:40px;max-width:520px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:48px}
+    .hero-trust{display:flex;flex-wrap:wrap;gap:20px}
+    /* FIX: contraste — de .65 para .88 */
+    .trust-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.88);font-size:14px}
+    .trust-item i{color:#34D399;font-size:15px}
+
+    /* hero cards */
+    .hero-cards{display:flex;flex-direction:column;gap:14px;padding-left:20px}
+    .mc{background:rgba(255,255,255,.09);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:20px 22px;display:flex;align-items:center;gap:16px;transition:var(--tr)}
+    .mc:hover{background:rgba(255,255,255,.14);transform:translateX(-6px)}
+    .mc-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+    .mc-icon.o{background:rgba(220,38,38,.22);color:var(--red)}
+    .mc-icon.g{background:rgba(52,211,153,.15);color:#34D399}
+    .mc-icon.b{background:rgba(96,165,250,.15);color:#60A5FA}
+    .mc-val{display:block;font-size:28px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.03em}
+    /* FIX: de .55 para .82 */
+    .mc-lbl{display:block;font-size:13px;color:rgba(255,255,255,.82);margin-top:3px}
+
+    /* ════════ STATS ════════ */
+    #stats{background:#fff;border-bottom:1px solid var(--g200)}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .stat{padding:36px 20px;text-align:center;border-right:1px solid var(--g200)}
+    .stat:last-child{border-right:none}
+    .stat-n{font-size:44px;font-weight:900;color:var(--navy);line-height:1;letter-spacing:-.04em;margin-bottom:8px}
+    .stat-n em{color:var(--red);font-style:normal}
+    /* FIX: de --g500 para --g700 (contraste 7.4:1) */
+    .stat-l{font-size:14px;color:var(--g700);font-weight:500}
+
+    /* ════════ PROBLEMS ════════ */
+    #problems{padding:96px 0;background:var(--off)}
+    .prob-hdr{margin-bottom:56px}
+    .prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .prob-card{background:#fff;border:1px solid var(--g200);border-radius:var(--r);padding:32px;transition:var(--tr);position:relative;overflow:hidden}
+    .prob-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--red);transform:scaleY(0);transform-origin:bottom;transition:transform .3s ease}
+    .prob-card:hover{border-color:var(--red);box-shadow:var(--sh-lg);transform:translateY(-4px)}
+    .prob-card:hover::before{transform:scaleY(1)}
+    .prob-icon{width:54px;height:54px;background:rgba(220,38,38,.1);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--red);margin-bottom:18px}
+    .prob-title{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:8px}
+    /* FIX: 14.5px → 15px; cor --g600 passa 5.7:1 */
+    .prob-text{font-size:15px;color:var(--g600);line-height:1.75}
+
+    /* ════════ SERVICES ════════ */
+    #services{padding:96px 0;background:#fff}
+    .srv-hdr{text-align:center;margin-bottom:60px}
+    .srv-hdr .sec-sub{margin:0 auto}
+    .srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .srv-card{background:var(--off);border:1px solid var(--g200);border-radius:var(--r-lg);padding:34px 30px;transition:var(--tr)}
+    .srv-card:hover{background:var(--navy);border-color:var(--navy);transform:translateY(-6px);box-shadow:var(--sh-xl)}
+    .srv-card:hover .srv-icon{background:rgba(220,38,38,.2);color:var(--red)}
+    .srv-card:hover .srv-name{color:#fff}
+    .srv-card:hover .srv-desc{color:rgba(255,255,255,.82)}
+    .srv-card:hover .srv-tag{background:rgba(255,255,255,.12);color:rgba(255,255,255,.88)}
+    .srv-icon{width:58px;height:58px;background:rgba(11,37,69,.08);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--navy);margin-bottom:22px;transition:var(--tr)}
+    .srv-name{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px;transition:color .28s}
+    .srv-desc{font-size:15px;color:var(--g600);line-height:1.75;margin-bottom:20px;transition:color .28s}
+    .srv-tags{display:flex;flex-wrap:wrap;gap:7px}
+    /* FIX: 11.5px → 13px */
+    .srv-tag{background:var(--g200);color:var(--g700);font-size:13px;font-weight:600;padding:5px 12px;border-radius:100px;transition:var(--tr)}
+
+    /* ════════ WHY US ════════ */
+    #why{padding:96px 0;background:var(--navy);position:relative;overflow:hidden}
+    .why-glow{position:absolute;top:-150px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(220,38,38,.07) 0%,transparent 65%);pointer-events:none}
+    .why-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+    .why-content .sec-title{color:#fff}
+    /* FIX: de .68 para .84 */
+    .why-content .sec-sub{color:rgba(255,255,255,.84)}
+    .feat-list{margin-top:38px;display:flex;flex-direction:column;gap:20px}
+    .feat{display:flex;gap:14px;align-items:flex-start}
+    .feat-check{width:34px;height:34px;border-radius:50%;background:rgba(52,211,153,.15);display:flex;align-items:center;justify-content:center;color:#34D399;font-size:15px;flex-shrink:0;margin-top:2px}
+    .feat-body strong{display:block;font-size:16px;font-weight:700;color:#fff;margin-bottom:4px}
+    /* FIX: de .58 para .82 */
+    .feat-body p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+    .why-cta{margin-top:38px}
+    .why-vis{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .wy{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:28px 20px;text-align:center;transition:var(--tr)}
+    .wy:hover{background:rgba(255,255,255,.13);border-color:rgba(220,38,38,.4)}
+    .wy:first-child{grid-column:1/-1}
+    .wy-ico{font-size:28px;color:var(--red);margin-bottom:10px}
+    .wy-n{font-size:38px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.04em}
+    /* FIX: de .55 para .82 */
+    .wy-l{font-size:14px;color:rgba(255,255,255,.82);margin-top:6px}
+
+    /* ════════ HOW IT WORKS ════════ */
+    #how{padding:96px 0;background:var(--g100)}
+    .how-hdr{text-align:center;margin-bottom:60px}
+    .how-hdr .sec-sub{margin:0 auto}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+    .steps::before{content:'';position:absolute;top:35px;left:calc(12.5% + 18px);right:calc(12.5% + 18px);height:2px;background:var(--g200);z-index:0}
+    .step{text-align:center;position:relative;z-index:1}
+    .step-num{width:70px;height:70px;border-radius:50%;background:#fff;border:2px solid var(--g200);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:var(--g500);margin:0 auto 20px;transition:var(--tr)}
+    .step:hover .step-num{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 0 0 6px rgba(11,37,69,.1)}
+    .step-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}
+    .step-desc{font-size:14px;color:var(--g600);line-height:1.68}
+
+    /* ════════ TESTIMONIALS ════════ */
+    #testi{padding:96px 0;background:#fff}
+    .testi-hdr{text-align:center;margin-bottom:60px}
+    .testi-hdr .sec-sub{margin:0 auto}
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .t-card{background:var(--off);border:1px solid var(--g200);border-radius:var(--r);padding:34px;transition:var(--tr)}
+    .t-card:hover{box-shadow:var(--sh-lg);transform:translateY(-4px);border-color:transparent}
+    .t-stars{display:flex;gap:3px;margin-bottom:18px}
+    .t-stars i{color:#D97706;font-size:16px}
+    .t-text{font-size:15px;color:var(--g600);line-height:1.8;font-style:italic;margin-bottom:22px}
+    .t-author{display:flex;align-items:center;gap:12px}
+    .t-av{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;flex-shrink:0}
+    .t-av.a{background:linear-gradient(135deg,var(--navy),#2563EB)}
+    .t-av.b{background:linear-gradient(135deg,#7C3AED,#EC4899)}
+    .t-av.c{background:linear-gradient(135deg,var(--green),#0891B2)}
+    .t-name{font-size:15px;font-weight:700;color:var(--navy);line-height:1.2}
+    /* FIX: 12px → 13px */
+    .t-role{font-size:13px;color:var(--g600)}
+
+    /* ════════ FAQ (FIX: div → button com aria) ════════ */
+    #faq{padding:96px 0;background:var(--off)}
+    .faq-inner{display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start}
+    .faq-side .sec-sub{margin-top:14px}
+    .faq-img{margin-top:36px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-l) 100%);border-radius:var(--r-lg);padding:36px;color:rgba(255,255,255,.85);font-size:15px;line-height:1.7}
+    .faq-img strong{display:block;color:#fff;font-size:18px;margin-bottom:10px}
+    .faq-list{display:flex;flex-direction:column;gap:10px}
+    .faq-item{background:#fff;border:1px solid var(--g200);border-radius:var(--r-sm);overflow:hidden;transition:border-color .25s,box-shadow .25s}
+    .faq-item.open{border-color:var(--red);box-shadow:0 4px 20px rgba(220,38,38,.1)}
+    /* FIX: era <div>, agora <button> — acessível por teclado */
+    .faq-q{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:20px 22px;cursor:pointer;
+      font-size:15px;font-weight:600;color:var(--navy);
+      gap:14px;transition:color .2s;
+      background:none;border:none;width:100%;text-align:left;
+      font-family:inherit;
+    }
+    .faq-q:hover{color:var(--red)}
+    .faq-tog{width:28px;height:28px;border-radius:50%;background:var(--g100);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--g600);flex-shrink:0;transition:var(--tr);pointer-events:none}
+    .faq-item.open .faq-tog{background:var(--red);color:#fff;transform:rotate(45deg)}
+    .faq-a{display:none;padding:0 22px 20px;font-size:15px;color:var(--g600);line-height:1.78}
+    .faq-item.open .faq-a{display:block}
+
+    /* ════════ CTA BANNER ════════ */
+    #cta{padding:96px 0;background:linear-gradient(135deg,var(--navy-d) 0%,var(--navy) 45%,#1A3D6E 100%);text-align:center;position:relative;overflow:hidden}
+    #cta::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+    .cta-inner{position:relative;z-index:1}
+    .cta-title{font-size:clamp(26px,4.5vw,50px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.03em;margin-bottom:18px}
+    .cta-sub{font-size:18px;color:rgba(255,255,255,.88);max-width:540px;margin:0 auto 44px;line-height:1.65}
+    .cta-acts{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px}
+    .cta-tel{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.88);font-size:16px;font-weight:500;padding:14px 20px}
+
+    /* ════════ CONTACT ════════ */
+    #contact{padding:96px 0;background:#fff}
+    .contact-inner{display:grid;grid-template-columns:3fr 2fr;gap:72px;align-items:start}
+    /* FIX: form-grid com labels associados via for/id */
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+    .fg{display:flex;flex-direction:column;gap:8px}
+    .fg.full{grid-column:1/-1}
+    .fg label{font-size:13px;font-weight:700;color:var(--g700);letter-spacing:.02em}
+    /* FIX: font-size 14.5 → 16px (leiturabilidade mobile) */
+    .fg input,.fg select,.fg textarea{
+      font-family:inherit;font-size:16px;color:var(--g700);
+      background:var(--off);border:1.5px solid var(--g200);
+      border-radius:var(--r-sm);padding:13px 15px;
+      transition:border-color .2s,box-shadow .2s;
+      outline:none;width:100%;
+    }
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,37,69,.08)}
+    .fg textarea{resize:vertical;min-height:120px}
+    .form-submit{margin-top:6px;width:100%;justify-content:center;padding:16px;font-size:16px}
+    /* FIX: de --g400 para --g600 (contraste 5.7:1) */
+    .form-note{font-size:13px;color:var(--g600);margin-top:10px;text-align:center}
+    .form-success{
+      display:none;background:#D1FAE5;border:1px solid #6EE7B7;
+      border-radius:var(--r-sm);padding:18px 22px;
+      color:#065F46;font-weight:600;font-size:15px;margin-top:16px;
+    }
+
+    /* contact info */
+    .ci-card{background:var(--off);border:1px solid var(--g200);border-radius:var(--r);padding:28px;margin-bottom:16px}
+    .ci-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:20px}
+    .ci-list{display:flex;flex-direction:column;gap:16px}
+    .ci-item{display:flex;align-items:flex-start;gap:12px}
+    .ci-ico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+    .ci-ico.ph{background:rgba(11,37,69,.08);color:var(--navy)}
+    .ci-ico.wa{background:rgba(37,211,102,.1);color:#1DA851}
+    .ci-ico.em{background:rgba(220,38,38,.1);color:var(--red)}
+    .ci-ico.hr{background:rgba(5,150,105,.1);color:#065F46}
+    /* FIX: 11px → 12px */
+    .ci-lbl{font-size:12px;font-weight:700;color:var(--g500);text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
+    .ci-val{font-size:15px;font-weight:600;color:var(--g700)}
+    .ci-val a:hover{color:var(--red)}
+    .social-row{display:flex;gap:10px;margin-top:8px}
+    /* FIX: touch targets 44×44px */
+    .soc{width:44px;height:44px;border-radius:10px;background:var(--g100);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--g600);transition:var(--tr)}
+    .soc:hover{background:var(--navy);color:#fff;transform:translateY(-2px)}
+    .soc[aria-disabled="true"]{opacity:.5;pointer-events:none;cursor:default}
+
+    /* ════════ FOOTER ════════ */
+    footer{background:var(--navy-d);padding:60px 0 28px}
+    .ft-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.1)}
+    /* FIX: de .45 para .75 */
+    .ft-tagline{font-size:14px;color:rgba(255,255,255,.75);line-height:1.7;max-width:280px;margin-top:14px}
+    /* FIX: de .42 para .65 */
+    .ft-col-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.09em;margin-bottom:18px}
+    .ft-links{display:flex;flex-direction:column;gap:11px}
+    /* FIX: de .6 para .85 */
+    .ft-links a{font-size:14px;color:rgba(255,255,255,.85);transition:color .2s}
+    .ft-links a:hover{color:#fff}
+    .ft-bot{display:flex;align-items:center;justify-content:space-between;padding-top:24px;gap:20px;flex-wrap:wrap}
+    /* FIX: de .35 para .65 */
+    .ft-copy{font-size:13px;color:rgba(255,255,255,.65)}
+    .ft-badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.65);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:6px 14px}
+    .ft-badge i{color:var(--red)}
+
+    /* ════════ WHATSAPP FLOAT ════════ */
+    .wa-float{position:fixed;bottom:30px;right:30px;z-index:900;display:flex;align-items:center}
+    .wa-btn{
+      width:64px;height:64px;border-radius:50%;
+      background:#25D366;display:flex;align-items:center;justify-content:center;
+      font-size:30px;color:#fff;
+      box-shadow:0 8px 30px rgba(37,211,102,.45);
+      transition:var(--tr);position:relative;flex-shrink:0;
+    }
+    .wa-btn:hover{transform:scale(1.1);box-shadow:0 12px 40px rgba(37,211,102,.6)}
+    .wa-pulse{position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:waPulse 2s ease-in-out infinite}
+    .wa-pulse:nth-child(2){animation-delay:.65s}
+    .wa-tip{
+      position:absolute;right:80px;top:50%;transform:translateY(-50%);
+      background:#fff;color:var(--g700);
+      font-size:13px;font-weight:600;white-space:nowrap;
+      padding:9px 16px;border-radius:8px;box-shadow:var(--sh-md);
+      opacity:0;pointer-events:none;transition:opacity .2s;
+    }
+    .wa-tip::after{content:'';position:absolute;top:50%;right:-6px;transform:translateY(-50%);border:6px solid transparent;border-right:none;border-left-color:#fff}
+    .wa-float:hover .wa-tip,.wa-btn:focus-visible+.wa-tip{opacity:1}
+    @keyframes waPulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.55);opacity:0}}
+
+    /* ════════ REDUCED MOTION (FIX) ════════ */
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+      html{scroll-behavior:auto}
+      .reveal.js-ready{opacity:1;transform:none}
+      .wa-pulse{animation:none}
+    }
+
+    /* ════════ RESPONSIVE ════════ */
+    @media(max-width:1024px){
+      .hero-inner{grid-template-columns:1fr}
+      .hero-cards{display:none}
+      .why-inner{grid-template-columns:1fr;gap:48px}
+      .why-vis{max-width:460px}
+      .faq-inner{grid-template-columns:1fr;gap:48px}
+      .contact-inner{grid-template-columns:1fr;gap:48px}
+      .ft-top{grid-template-columns:1fr 1fr;gap:36px}
+    }
+    @media(max-width:768px){
+      /* FIX: seções com padding reduzido no mobile */
+      #problems,#services,#why,#how,#testi,#faq,#cta,#contact{padding:64px 0}
+      /* FIX: hero padding mobile */
+      #hero{padding:96px 0 60px}
+      nav,.hdr-right{display:none}
+      .hamburger{display:flex}
+      .stats-grid{grid-template-columns:1fr 1fr}
+      .stat{border-right:none;border-bottom:1px solid var(--g200)}
+      .stat:nth-child(odd){border-right:1px solid var(--g200)}
+      .stat:last-child,.stat:nth-last-child(2){border-bottom:none}
+      .prob-grid{grid-template-columns:1fr}
+      .srv-grid{grid-template-columns:1fr 1fr}
+      .steps{grid-template-columns:1fr 1fr}
+      .steps::before{display:none}
+      .testi-grid{grid-template-columns:1fr}
+      .ft-top{grid-template-columns:1fr}
+      .ft-bot{flex-direction:column;text-align:center}
+      .form-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:540px){
+      .srv-grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+      .hero-actions{flex-direction:column}
+      .hero-actions .btn{width:100%;justify-content:center}
+      .cta-acts{flex-direction:column;width:100%;max-width:360px;margin:0 auto}
+      .cta-acts .btn{width:100%;justify-content:center}
+      .wa-float{bottom:18px;right:18px}
+      /* FIX: stat-n menor em telas pequenas */
+      .stat-n{font-size:36px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- FIX: Skip link para teclado/leitor de tela -->
+<a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+<!-- FIX: role=dialog + aria-modal + aria-label no menu mobile -->
+<div class="mob-nav" id="mobNav" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <button class="mob-close" id="mobClose" aria-label="Fechar menu">
+    <i class="fas fa-times" aria-hidden="true"></i>
+  </button>
+  <a href="#services" onclick="closeMob()">Serviços</a>
+  <a href="#why" onclick="closeMob()">Por que nós</a>
+  <a href="#testi" onclick="closeMob()">Depoimentos</a>
+  <a href="#faq" onclick="closeMob()">FAQ</a>
+  <a href="#contact" onclick="closeMob()">Contato</a>
+  <a href="https://wa.me/5564993323131?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Grupo%20Tema." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar agora
+  </a>
+</div>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="container">
+    <div class="hdr-inner">
+      <a href="#hero" class="logo" aria-label="Grupo Tema — página inicial">
+        <div class="logo-icon" aria-hidden="true">GT</div>
+        <div class="logo-text">
+          <strong>Grupo Tema</strong>
+          <span>Organização Contábil</span>
+        </div>
+      </a>
+      <!-- FIX: aria-label na nav -->
+      <nav aria-label="Navegação principal">
+        <a href="#services">Serviços</a>
+        <a href="#why">Por que nós</a>
+        <a href="#how">Como funciona</a>
+        <a href="#testi">Depoimentos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contato</a>
+      </nav>
+      <div class="hdr-right">
+        <a href="tel:6433224404" class="btn btn-outline btn-sm">
+          <i class="fas fa-phone" aria-hidden="true"></i> (64) 3322-4404
+        </a>
+        <a href="https://wa.me/5564993323131?text=Olá!%20Gostaria%20de%20um%20atendimento%20da%20Grupo%20Tema." class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
+      </div>
+      <!-- FIX: aria-expanded + aria-controls no hambúrguer -->
+      <button class="hamburger" id="hambBtn"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+        aria-controls="mobNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- FIX: <main> como landmark principal -->
+<main id="main-content">
+
+<!-- HERO -->
+<section id="hero" aria-labelledby="hero-title">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow1" aria-hidden="true"></div>
+  <div class="hero-glow2" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content reveal">
+        <div class="hero-badge">
+          <i class="fas fa-shield-halved" aria-hidden="true"></i>
+          Há mais de 30 anos cuidando do seu negócio
+        </div>
+        <h1 class="hero-title" id="hero-title">
+          Sua empresa em dia.<br>
+          Você focado no <span class="hl">crescimento.</span>
+        </h1>
+        <p class="hero-sub">
+          Cuidamos de toda a burocracia contábil, fiscal e trabalhista para que você possa tomar decisões com segurança, sem surpresas e sem multas.
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/5564993323131?text=Olá!%20Quero%20uma%20análise%20gratuita%20da%20minha%20empresa." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar com um especialista
+          </a>
+          <a href="#services" class="btn btn-outline">
+            Conheça os serviços <i class="fas fa-arrow-down" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="hero-trust" aria-label="Garantias">
+          <div class="trust-item"><i class="fas fa-circle-check" aria-hidden="true"></i> Análise gratuita</div>
+          <div class="trust-item"><i class="fas fa-circle-check" aria-hidden="true"></i> Sem burocracia</div>
+          <div class="trust-item"><i class="fas fa-circle-check" aria-hidden="true"></i> Atendimento humanizado</div>
+        </div>
+      </div>
+      <div class="hero-cards reveal" aria-hidden="true">
+        <div class="mc">
+          <div class="mc-icon o"><i class="fas fa-building" aria-hidden="true"></i></div>
+          <div><span class="mc-val">+500</span><span class="mc-lbl">Empresas atendidas em Goiás</span></div>
+        </div>
+        <div class="mc">
+          <div class="mc-icon g"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
+          <div><span class="mc-val">+30 anos</span><span class="mc-lbl">de experiência e confiança</span></div>
+        </div>
+        <div class="mc">
+          <div class="mc-icon b"><i class="fas fa-percent" aria-hidden="true"></i></div>
+          <div><span class="mc-val">R$ 0</span><span class="mc-lbl">em multas por erros fiscais</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats" aria-label="Nossos números">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <div class="stat-n"><span class="count" data-to="30">30</span><em>+</em></div>
+        <div class="stat-l">Anos de mercado</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-n"><span class="count" data-to="500">500</span><em>+</em></div>
+        <div class="stat-l">Empresas atendidas</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-n"><span class="count" data-to="98">98</span><em>%</em></div>
+        <div class="stat-l">Clientes satisfeitos</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-n"><span class="count" data-to="6">6</span></div>
+        <div class="stat-l">Regimes tributários atendidos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section id="problems" aria-labelledby="prob-title">
+  <div class="container">
+    <div class="prob-hdr reveal">
+      <div class="tag" aria-hidden="true"><i class="fas fa-lightbulb" aria-hidden="true"></i> Reconhece alguma dessas situações?</div>
+      <h2 class="sec-title" id="prob-title">Problemas que resolvemos <span>todo dia</span></h2>
+      <p class="sec-sub">Muitos empresários carregam sozinhos o peso da burocracia. Nós tiramos esse peso das suas costas.</p>
+    </div>
+    <div class="prob-grid">
+      <div class="prob-card reveal">
+        <div class="prob-icon" aria-hidden="true"><i class="fas fa-file-circle-exclamation"></i></div>
+        <h3 class="prob-title">Medo de multas e autuações</h3>
+        <p class="prob-text">Atrasos no eSocial, erros na SEFAZ e obrigações acessórias deixando você nervoso? Nossa equipe mantém tudo em conformidade — você foca no negócio.</p>
+      </div>
+      <div class="prob-card reveal">
+        <div class="prob-icon" aria-hidden="true"><i class="fas fa-sack-dollar"></i></div>
+        <h3 class="prob-title">Pagando imposto a mais do que deveria</h3>
+        <p class="prob-text">Sem um planejamento tributário adequado, muitas empresas perdem dinheiro todos os meses. Identificamos o regime ideal e oportunidades legais de economia.</p>
+      </div>
+      <div class="prob-card reveal">
+        <div class="prob-icon" aria-hidden="true"><i class="fas fa-clock-rotate-left"></i></div>
+        <h3 class="prob-title">Tempo desperdiçado com papelada</h3>
+        <p class="prob-text">Horas gastas em obrigações burocráticas são horas subtraídas do crescimento. Terceirize sua contabilidade e recupere o tempo que é seu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" aria-labelledby="srv-title">
+  <div class="container">
+    <div class="srv-hdr reveal">
+      <div class="tag" aria-hidden="true"><i class="fas fa-briefcase" aria-hidden="true"></i> O que oferecemos</div>
+      <h2 class="sec-title" id="srv-title">Soluções completas para <span>seu negócio</span></h2>
+      <p class="sec-sub">Do registro da sua empresa até o planejamento do crescimento — um único parceiro contábil, da abertura à expansão.</p>
+    </div>
+    <div class="srv-grid">
+      <article class="srv-card reveal">
+        <div class="srv-icon" aria-hidden="true"><i class="fas fa-store"></i></div>
+        <h3 class="srv-name">Abertura de Empresa</h3>
+        <p class="srv-desc">Do sonho ao CNPJ. Cuidamos de todo o processo de registro, enquadramento societário e licenças iniciais para você começar do jeito certo.</p>
+        <div class="srv-tags" aria-label="Palavras-chave">
+          <span class="srv-tag">Registro</span><span class="srv-tag">CNPJ</span><span class="srv-tag">Alvará</span>
+        </div>
+      </article>
+      <article class="srv-card reveal">
+        <div class="srv-icon" aria-hidden="true"><i class="fas fa-chart-pie"></i></div>
+        <h3 class="srv-name">Contabilidade Empresarial</h3>
+        <p class="srv-desc">Escrituração contábil completa, balancetes, DRE e balanço patrimonial. Tenha clareza total sobre a saúde financeira da sua empresa.</p>
+        <div class="srv-tags" aria-label="Palavras-chave">
+          <span class="srv-tag">Balanço</span><span class="srv-tag">DRE</span><span class="srv-tag">SPED</span>
+        </div>
+      </article>
+      <article class="srv-card reveal">
+        <div class="srv-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+        <h3 class="srv-name">Departamento Pessoal</h3>
+        <p class="srv-desc">Folha de pagamento, eSocial, admissões, demissões, férias e 13º sem erros e sem estresse. Sua equipe em dia, sempre.</p>
+        <div class="srv-tags" aria-label="Palavras-chave">
+          <span class="srv-tag">eSocial</span><span class="srv-tag">Folha</span><span class="srv-tag">FGTS</span>
+        </div>
+      </article>
+      <article class="srv-card reveal">
+        <div class="srv-icon" aria-hidden="true"><i class="fas fa-scale-balanced"></i></div>
+        <h3 class="srv-name">Planejamento Tributário</h3>
+        <p class="srv-desc">Pague apenas o que é justo. Analisamos o regime mais vantajoso — Simples Nacional, Lucro Presumido ou Lucro Real — e maximizamos sua economia fiscal.</p>
+        <div class="srv-tags" aria-label="Palavras-chave">
+          <span class="srv-tag">Simples</span><span class="srv-tag">Lucro Presumido</span><span class="srv-tag">Lucro Real</span>
+        </div>
+      </article>
+      <article class="srv-card reveal">
+        <div class="srv-icon" aria-hidden="true"><i class="fas fa-file-invoice-dollar"></i></div>
+        <h3 class="srv-name">Imposto de Renda</h3>
+        <p class="srv-desc">Declaração de IR para pessoa física e jurídica, MEI e microempresas. Entregamos no prazo, com revisão e sem risco de cair na malha fina.</p>
+        <div class="srv-tags" aria-label="Palavras-chave">
+          <span class="srv-tag">IR PF</span><span class="srv-tag">IR PJ</span><span class="srv-tag">MEI</span>
+        </div>
+      </article>
+      <article class="srv-card reveal">
+        <div class="srv-icon" aria-hidden="true"><i class="fas fa-handshake"></i></div>
+        <h3 class="srv-name">Consultoria Empresarial</h3>
+        <p class="srv-desc">Decisões estratégicas baseadas em dados reais. Auxiliamos na estruturação societária, análise de viabilidade e preparação para crescimento.</p>
+        <div class="srv-tags" aria-label="Palavras-chave">
+          <span class="srv-tag">Estratégia</span><span class="srv-tag">Societário</span><span class="srv-tag">Viabilidade</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" aria-labelledby="why-title">
+  <div class="why-glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="why-inner">
+      <div class="why-content reveal">
+        <div class="tag" aria-hidden="true"><i class="fas fa-trophy" aria-hidden="true"></i> Nossos diferenciais</div>
+        <h2 class="sec-title" id="why-title">Por que empresas em Goiás confiam na <span>Grupo Tema</span></h2>
+        <p class="sec-sub">Não somos apenas contadores. Somos parceiros estratégicos do seu negócio — com a seriedade de três décadas e a agilidade que o mercado atual exige.</p>
+        <ul class="feat-list" aria-label="Diferenciais">
+          <li class="feat">
+            <div class="feat-check" aria-hidden="true"><i class="fas fa-check"></i></div>
+            <div class="feat-body">
+              <strong>Atendimento personalizado e humanizado</strong>
+              <p>Você tem um contador dedicado que conhece a realidade da sua empresa, não um número de protocolo.</p>
+            </div>
+          </li>
+          <li class="feat">
+            <div class="feat-check" aria-hidden="true"><i class="fas fa-check"></i></div>
+            <div class="feat-body">
+              <strong>Conformidade fiscal garantida</strong>
+              <p>Zero tolerância a atrasos. Todas as obrigações acessórias entregues dentro do prazo, sempre.</p>
+            </div>
+          </li>
+          <li class="feat">
+            <div class="feat-check" aria-hidden="true"><i class="fas fa-check"></i></div>
+            <div class="feat-body">
+              <strong>Gestão digital e transparente</strong>
+              <p>Comunicação ágil, documentos digitais e relatórios claros — você sabe o que acontece com sua empresa em tempo real.</p>
+            </div>
+          </li>
+          <li class="feat">
+            <div class="feat-check" aria-hidden="true"><i class="fas fa-check"></i></div>
+            <div class="feat-body">
+              <strong>Equipe multidisciplinar experiente</strong>
+              <p>Contadores, analistas fiscais e especialistas em DP trabalhando em conjunto pelo sucesso do seu negócio.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="why-cta">
+          <a href="https://wa.me/5564993323131?text=Olá!%20Quero%20conversar%20sobre%20trocar%20de%20contabilidade." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> Quero trocar de contador
+          </a>
+        </div>
+      </div>
+      <div class="why-vis reveal" aria-hidden="true">
+        <div class="wy">
+          <div class="wy-ico"><i class="fas fa-award" aria-hidden="true"></i></div>
+          <div class="wy-n">+30</div>
+          <div class="wy-l">Anos de experiência no mercado contábil goiano</div>
+        </div>
+        <div class="wy">
+          <div class="wy-ico"><i class="fas fa-building" aria-hidden="true"></i></div>
+          <div class="wy-n">+500</div>
+          <div class="wy-l">Empresas atendidas</div>
+        </div>
+        <div class="wy">
+          <div class="wy-ico"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+          <div class="wy-n">100%</div>
+          <div class="wy-l">Suporte dedicado e direto</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" aria-labelledby="how-title">
+  <div class="container">
+    <div class="how-hdr reveal">
+      <div class="tag" aria-hidden="true"><i class="fas fa-map-signs" aria-hidden="true"></i> Simples assim</div>
+      <h2 class="sec-title" id="how-title">Como funciona a <span>parceria</span></h2>
+      <p class="sec-sub">Migrar de contador ou começar do zero nunca foi tão simples. Em 4 passos você já tem tudo em ordem.</p>
+    </div>
+    <ol class="steps" aria-label="Passos para contratar">
+      <li class="step reveal">
+        <div class="step-num" aria-hidden="true">01</div>
+        <h3 class="step-title">Análise gratuita</h3>
+        <p class="step-desc">Conversamos sobre a situação atual da sua empresa e identificamos oportunidades de melhoria — sem compromisso.</p>
+      </li>
+      <li class="step reveal">
+        <div class="step-num" aria-hidden="true">02</div>
+        <h3 class="step-title">Proposta personalizada</h3>
+        <p class="step-desc">Montamos um plano de serviços sob medida, com escopo claro e transparência total sobre valores e entregas.</p>
+      </li>
+      <li class="step reveal">
+        <div class="step-num" aria-hidden="true">03</div>
+        <h3 class="step-title">Transição sem dor</h3>
+        <p class="step-desc">Cuidamos de toda a migração dos documentos do seu contador anterior. Você não precisa fazer nada.</p>
+      </li>
+      <li class="step reveal">
+        <div class="step-num" aria-hidden="true">04</div>
+        <h3 class="step-title">Empresa em dia</h3>
+        <p class="step-desc">Assumimos as obrigações e você ganha tempo, tranquilidade e um parceiro estratégico de confiança.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testi" aria-labelledby="testi-title">
+  <div class="container">
+    <div class="testi-hdr reveal">
+      <div class="tag" aria-hidden="true"><i class="fas fa-star" aria-hidden="true"></i> Depoimentos</div>
+      <h2 class="sec-title" id="testi-title">O que nossos clientes <span>dizem</span></h2>
+      <p class="sec-sub">Resultados reais de quem confiou na Grupo Tema para cuidar da contabilidade do seu negócio.</p>
+    </div>
+    <div class="testi-grid">
+      <article class="t-card reveal">
+        <div class="t-stars" aria-label="5 de 5 estrelas">
+          <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+        </div>
+        <blockquote class="t-text">"Desde que fechei com a Grupo Tema, nunca mais me preocupei com prazos ou multas. A equipe é extremamente atenciosa e sempre me avisa com antecedência sobre qualquer obrigação. Recomendo de olhos fechados."</blockquote>
+        <footer class="t-author">
+          <div class="t-av a" aria-hidden="true">MR</div>
+          <div>
+            <div class="t-name">Marcos Rocha</div>
+            <div class="t-role">Proprietário — Comércio Varejista, Goiás</div>
+          </div>
+        </footer>
+      </article>
+      <article class="t-card reveal">
+        <div class="t-stars" aria-label="5 de 5 estrelas">
+          <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+        </div>
+        <blockquote class="t-text">"A Grupo Tema nos ajudou a migrar do Lucro Presumido para o Simples Nacional e a economia foi significativa. O atendimento é diferenciado — você fala diretamente com quem entende do seu negócio."</blockquote>
+        <footer class="t-author">
+          <div class="t-av b" aria-hidden="true">AC</div>
+          <div>
+            <div class="t-name">Ana Cristina Lima</div>
+            <div class="t-role">Sócia — Clínica de Estética, Goiás</div>
+          </div>
+        </footer>
+      </article>
+      <article class="t-card reveal">
+        <div class="t-stars" aria-label="5 de 5 estrelas">
+          <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+        </div>
+        <blockquote class="t-text">"Abri minha empresa com eles e foi tudo muito tranquilo. Em menos de duas semanas já estava com CNPJ, alvará e nota fiscal ativa. Custo-benefício excelente e equipe sempre disponível."</blockquote>
+        <footer class="t-author">
+          <div class="t-av c" aria-hidden="true">FS</div>
+          <div>
+            <div class="t-name">Felipe Souza</div>
+            <div class="t-role">Fundador — Prestadora de Serviços de TI, Goiás</div>
+          </div>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ (FIX: <button> + aria-expanded + aria-controls) -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="faq-inner">
+      <div class="faq-side reveal">
+        <div class="tag" aria-hidden="true"><i class="fas fa-circle-question" aria-hidden="true"></i> Dúvidas frequentes</div>
+        <h2 class="sec-title" id="faq-title">Temos as <span>respostas</span></h2>
+        <p class="sec-sub">Respondemos as perguntas mais comuns para você tomar a melhor decisão com segurança.</p>
+        <div class="faq-img">
+          <strong>Ainda tem dúvidas?</strong>
+          Fale diretamente com um de nossos especialistas pelo WhatsApp — resposta rápida, sem compromisso.
+          <br><br>
+          <a href="https://wa.me/5564993323131?text=Olá!%20Tenho%20uma%20dúvida%20sobre%20contabilidade." class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" style="margin-top:4px">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> Perguntar agora
+          </a>
+        </div>
+      </div>
+      <div class="faq-list reveal" role="list">
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a1">
+            Como funciona a transição do meu contador atual?
+            <span class="faq-tog" aria-hidden="true"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-a" id="faq-a1" role="region">Nós cuidamos de tudo. Entramos em contato com seu escritório anterior, solicitamos todos os documentos e registros, e realizamos a migração de forma transparente — sem ônus para você. O processo é rápido e você não precisa se preocupar com nada.</div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a2">
+            Atendem empresas de todos os portes e segmentos?
+            <span class="faq-tog" aria-hidden="true"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-a" id="faq-a2" role="region">Sim. Atendemos desde MEIs e microempresas até empresas de médio porte nos mais variados segmentos: comércio, serviços, indústria, saúde, educação, tecnologia e muito mais. Temos experiência com todos os regimes tributários vigentes.</div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a3">
+            Preciso ir até o escritório pessoalmente?
+            <span class="faq-tog" aria-hidden="true"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-a" id="faq-a3" role="region">Não necessariamente. Trabalhamos de forma digital — documentos podem ser enviados por e-mail, WhatsApp ou plataformas na nuvem. Para quem prefere o atendimento presencial, também estamos à disposição em nosso escritório.</div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a4">
+            Qual o custo mensal dos serviços contábeis?
+            <span class="faq-tog" aria-hidden="true"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-a" id="faq-a4" role="region">Os valores variam de acordo com o porte da empresa, regime tributário, volume de notas fiscais e complexidade das operações. Fazemos uma análise gratuita e apresentamos uma proposta personalizada sem compromisso. Fale conosco para receber um orçamento.</div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a5">
+            Como funciona o planejamento tributário?
+            <span class="faq-tog" aria-hidden="true"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-a" id="faq-a5" role="region">Fazemos uma análise detalhada das receitas, despesas e atividades da sua empresa para identificar o regime tributário mais vantajoso e eventuais oportunidades de economia fiscal legais. O objetivo é sempre reduzir a carga tributária de forma segura e sustentável.</div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a6">
+            Como é feito o atendimento pós-contratação?
+            <span class="faq-tog" aria-hidden="true"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-a" id="faq-a6" role="region">Cada cliente tem um contador responsável dedicado. O contato pode ser feito por telefone, WhatsApp ou e-mail. Enviamos relatórios periódicos e alertas sobre obrigações futuras para que você esteja sempre informado sobre a situação da empresa.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section id="cta" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <h2 class="cta-title" id="cta-title">Pronto para ter uma contabilidade<br>que trabalha <span style="color:var(--red)">pelo seu crescimento?</span></h2>
+      <p class="cta-sub">Fale agora com um especialista, receba uma análise gratuita da situação da sua empresa e descubra como podemos ajudá-lo.</p>
+      <div class="cta-acts">
+        <a href="https://wa.me/5564993323131?text=Olá!%20Quero%20uma%20análise%20gratuita%20da%20minha%20empresa%20com%20a%20Grupo%20Tema." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Análise gratuita pelo WhatsApp
+        </a>
+        <a href="#contact" class="btn btn-outline">Enviar mensagem</a>
+        <span class="cta-tel"><i class="fas fa-phone" aria-hidden="true"></i> (64) 3322-4404</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT (FIX: label for/id, autocomplete, inputmode) -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact-inner">
+      <div>
+        <div class="reveal">
+          <div class="tag" aria-hidden="true"><i class="fas fa-envelope" aria-hidden="true"></i> Fale conosco</div>
+          <h2 class="sec-title" id="contact-title">Envie uma <span>mensagem</span></h2>
+          <p class="sec-sub">Preencha o formulário e entraremos em contato em até 24 horas. Para atendimento imediato, use o WhatsApp.</p>
+        </div>
+        <form class="form-grid" id="contactForm" onsubmit="handleForm(event)" novalidate>
+          <div class="fg">
+            <label for="f-nome">Nome completo <abbr title="campo obrigatório">*</abbr></label>
+            <input type="text" id="f-nome" name="nome" placeholder="João Silva" required autocomplete="name">
+          </div>
+          <div class="fg">
+            <label for="f-tel">Telefone / WhatsApp <abbr title="campo obrigatório">*</abbr></label>
+            <!-- FIX: inputmode numérico para teclado mobile -->
+            <input type="tel" id="f-tel" name="tel" placeholder="(64) 99999-9999" required autocomplete="tel" inputmode="tel">
+          </div>
+          <div class="fg">
+            <label for="f-email">E-mail <abbr title="campo obrigatório">*</abbr></label>
+            <input type="email" id="f-email" name="email" placeholder="joao@empresa.com.br" required autocomplete="email">
+          </div>
+          <div class="fg">
+            <label for="f-tipo">Tipo de empresa</label>
+            <select id="f-tipo" name="tipo" autocomplete="organization">
+              <option value="">Selecione...</option>
+              <option>MEI</option>
+              <option>Microempresa (ME)</option>
+              <option>Empresa de Pequeno Porte (EPP)</option>
+              <option>Empresa de Médio/Grande Porte</option>
+              <option>Pessoa Física</option>
+              <option>Ainda não tenho empresa</option>
+            </select>
+          </div>
+          <div class="fg full">
+            <label for="f-msg">Como podemos ajudá-lo?</label>
+            <textarea id="f-msg" name="msg" placeholder="Descreva brevemente o que você precisa..."></textarea>
+          </div>
+          <div class="fg full">
+            <button type="submit" class="btn btn-primary form-submit">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar mensagem
+            </button>
+            <p class="form-note"><i class="fas fa-lock" aria-hidden="true"></i> Seus dados estão protegidos e não serão compartilhados com terceiros.</p>
+          </div>
+        </form>
+        <!-- FIX: aria-live para leitor de tela anunciar sucesso -->
+        <div id="formSuccess" class="form-success" role="alert" aria-live="polite">
+          <i class="fas fa-circle-check" aria-hidden="true"></i> Mensagem enviada! Entraremos em contato em breve.
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="ci-card">
+          <div class="ci-title"><i class="fas fa-address-book" style="color:var(--red);margin-right:8px" aria-hidden="true"></i> Informações de contato</div>
+          <div class="ci-list">
+            <div class="ci-item">
+              <div class="ci-ico ph" aria-hidden="true"><i class="fas fa-phone"></i></div>
+              <div>
+                <div class="ci-lbl">Telefone fixo</div>
+                <div class="ci-val"><a href="tel:6433224404">(64) 3322-4404</a></div>
+              </div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-ico wa" aria-hidden="true"><i class="fab fa-whatsapp"></i></div>
+              <div>
+                <div class="ci-lbl">WhatsApp</div>
+                <div class="ci-val"><a href="https://wa.me/5564993323131" target="_blank" rel="noopener noreferrer">(64) 99332-3131</a></div>
+              </div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-ico em" aria-hidden="true"><i class="fas fa-envelope"></i></div>
+              <div>
+                <div class="ci-lbl">E-mail</div>
+                <div class="ci-val"><a href="mailto:temaorganizacaocontabil@gmail.com">temaorganizacaocontabil@gmail.com</a></div>
+              </div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-ico hr" aria-hidden="true"><i class="fas fa-clock"></i></div>
+              <div>
+                <div class="ci-lbl">Horário de atendimento</div>
+                <div class="ci-val">Seg–Sex: 08h–18h</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ci-card">
+          <div class="ci-title"><i class="fas fa-share-nodes" style="color:var(--red);margin-right:8px" aria-hidden="true"></i> Redes sociais</div>
+          <!-- FIX: links sem URL real marcados como disabled -->
+          <div class="social-row">
+            <a href="#" class="soc" aria-label="Instagram (em breve)" aria-disabled="true" onclick="return false"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" class="soc" aria-label="Facebook (em breve)" aria-disabled="true" onclick="return false"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://wa.me/5564993323131" class="soc" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+            <a href="#" class="soc" aria-label="LinkedIn (em breve)" aria-disabled="true" onclick="return false"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main><!-- /main -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="ft-top">
+      <div>
+        <a href="#hero" class="logo" aria-label="Voltar ao topo">
+          <div class="logo-icon" aria-hidden="true">GT</div>
+          <div class="logo-text">
+            <strong>Grupo Tema</strong>
+            <span>Organização Contábil</span>
+          </div>
+        </a>
+        <p class="ft-tagline">Mais de 30 anos cuidando da contabilidade de empresas em Goiás com rigor, agilidade e compromisso com o crescimento dos nossos clientes.</p>
+      </div>
+      <nav aria-label="Links de serviços">
+        <div class="ft-col-title">Serviços</div>
+        <div class="ft-links">
+          <a href="#services">Abertura de Empresa</a>
+          <a href="#services">Contabilidade Empresarial</a>
+          <a href="#services">Departamento Pessoal</a>
+          <a href="#services">Planejamento Tributário</a>
+          <a href="#services">Imposto de Renda</a>
+          <a href="#services">Consultoria Empresarial</a>
+        </div>
+      </nav>
+      <nav aria-label="Links da empresa">
+        <div class="ft-col-title">Empresa</div>
+        <div class="ft-links">
+          <a href="#why">Sobre nós</a>
+          <a href="#how">Como funciona</a>
+          <a href="#testi">Depoimentos</a>
+          <a href="#faq">Perguntas frequentes</a>
+          <a href="#contact">Contato</a>
+        </div>
+      </nav>
+      <div>
+        <div class="ft-col-title">Contato</div>
+        <div class="ft-links">
+          <a href="tel:6433224404"><i class="fas fa-phone" aria-hidden="true" style="width:14px;margin-right:6px"></i>(64) 3322-4404</a>
+          <a href="https://wa.me/5564993323131" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true" style="width:14px;margin-right:6px"></i>(64) 99332-3131</a>
+          <a href="mailto:temaorganizacaocontabil@gmail.com"><i class="fas fa-envelope" aria-hidden="true" style="width:14px;margin-right:6px"></i>Enviar e-mail</a>
+        </div>
+        <div class="social-row" style="margin-top:20px">
+          <a href="#" class="soc" aria-label="Instagram (em breve)" aria-disabled="true" onclick="return false"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="soc" aria-label="Facebook (em breve)" aria-disabled="true" onclick="return false"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://wa.me/5564993323131" class="soc" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p class="ft-copy">© 2025 Grupo Tema Organização Contábil. Todos os direitos reservados. CNPJ: 14.850.931/0001-93</p>
+      <div class="ft-badge"><i class="fas fa-shield-halved" aria-hidden="true"></i> Site seguro e profissional</div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<div class="wa-float">
+  <a href="https://wa.me/5564993323131?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista%20da%20Grupo%20Tema."
+    class="wa-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar pelo WhatsApp com a Grupo Tema">
+    <div class="wa-pulse" aria-hidden="true"></div>
+    <div class="wa-pulse" aria-hidden="true"></div>
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+  <div class="wa-tip" aria-hidden="true">Fale conosco agora!</div>
+</div>
+
+<script>
+  // ── Header scroll
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // ── Mobile menu + FIX: aria-expanded + focus trap
+  const hambBtn  = document.getElementById('hambBtn');
+  const mobNav   = document.getElementById('mobNav');
+  const mobClose = document.getElementById('mobClose');
+
+  function openMob() {
+    hambBtn.setAttribute('aria-expanded', 'true');
+    hambBtn.setAttribute('aria-label', 'Fechar menu de navegação');
+    mobNav.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    mobClose.focus();
+  }
+
+  function closeMob() {
+    hambBtn.setAttribute('aria-expanded', 'false');
+    hambBtn.setAttribute('aria-label', 'Abrir menu de navegação');
+    mobNav.classList.remove('open');
+    document.body.style.overflow = '';
+    hambBtn.focus();
+  }
+
+  hambBtn.addEventListener('click', () => {
+    mobNav.classList.contains('open') ? closeMob() : openMob();
+  });
+  mobClose.addEventListener('click', closeMob);
+
+  // Fechar com Esc
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobNav.classList.contains('open')) closeMob();
+  });
+
+  // ── Scroll reveal (FIX: aplica js-ready só se JS estiver ativo)
+  const reveals = document.querySelectorAll('.reveal');
+  reveals.forEach(el => el.classList.add('js-ready'));
+
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        ro.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => ro.observe(el));
+
+  // ── Counter animation
+  const counters = document.querySelectorAll('.count');
+  const co = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el  = entry.target;
+      const end = parseInt(el.dataset.to, 10);
+      const dur = 1400;
+      const step = 16;
+      const inc  = end / (dur / step);
+      let cur = 0;
+      const timer = setInterval(() => {
+        cur += inc;
+        if (cur >= end) { cur = end; clearInterval(timer); }
+        el.textContent = Math.round(cur);
+      }, step);
+      co.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(el => co.observe(el));
+
+  // ── FAQ accordion (FIX: aria-expanded gerenciado)
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Fecha todos
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      // Abre o clicado
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // ── Contact form → abre WhatsApp
+  function handleForm(e) {
+    e.preventDefault();
+    const form = document.getElementById('contactForm');
+    const data = new FormData(form);
+    const msg  = `Olá!%20Vim%20pelo%20site.%0A%0A*Nome:*%20${encodeURIComponent(data.get('nome'))}%0A*Tel:*%20${encodeURIComponent(data.get('tel'))}%0A*E-mail:*%20${encodeURIComponent(data.get('email'))}%0A*Empresa:*%20${encodeURIComponent(data.get('tipo') || 'Não informado')}%0A*Mensagem:*%20${encodeURIComponent(data.get('msg') || 'Gostaria de mais informações.')}`;
+    window.open(`https://wa.me/5564993323131?text=${msg}`, '_blank', 'noopener');
+    form.style.display = 'none';
+    const suc = document.getElementById('formSuccess');
+    suc.style.display = 'block';
+    suc.focus();
+  }
+
+  // ── Smooth scroll respeitando prefers-reduced-motion
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: prefersReduced ? 'auto' : 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
