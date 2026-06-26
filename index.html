@@ -74,6 +74,35 @@
     .btn-navy{background:var(--navy);color:#fff}
     .btn-navy:hover{background:var(--navy-l);transform:translateY(-2px);box-shadow:var(--sh-lg)}
     .btn-sm{padding:11px 22px;font-size:15px;min-height:44px}
+    /* Botão Área do Cliente */
+    .btn-portal{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.3);font-size:14px;padding:10px 18px;min-height:44px;gap:8px}
+    .btn-portal:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.7)}
+    .btn-portal i{font-size:15px}
+
+    /* ════════ PORTAL STRIP ════════ */
+    #portal-strip{background:var(--navy);border-bottom:3px solid var(--red)}
+    .portal-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:20px;padding:20px 0;
+    }
+    .portal-left{display:flex;align-items:center;gap:18px}
+    .portal-app-icon{
+      width:52px;height:52px;border-radius:14px;
+      background:rgba(220,38,38,.15);border:1px solid rgba(220,38,38,.3);
+      display:flex;align-items:center;justify-content:center;
+      font-size:24px;color:var(--red);flex-shrink:0;
+    }
+    .portal-info strong{display:block;font-size:16px;font-weight:700;color:#fff;margin-bottom:3px}
+    .portal-info span{font-size:13px;color:rgba(255,255,255,.75)}
+    .portal-right{display:flex;align-items:center;gap:20px;flex-shrink:0}
+    .portal-badge{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.7)}
+    .portal-badge i{color:#34D399;font-size:14px}
+    @media(max-width:768px){
+      .portal-inner{flex-direction:column;text-align:center;padding:24px 0;gap:18px}
+      .portal-left{flex-direction:column;gap:12px}
+      .portal-right{flex-direction:column;gap:12px}
+      .portal-badge{display:none}
+    }
 
     /* ── REVEAL (FIX: visível por padrão; anima só se JS rodar) ── */
     .reveal{transition:opacity .6s ease,transform .6s ease}
@@ -455,6 +484,7 @@
   <button class="mob-close" id="mobClose" aria-label="Fechar menu">
     <i class="fas fa-times" aria-hidden="true"></i>
   </button>
+  <a href="https://appcondo-gt.web.app/home" target="_blank" rel="noopener noreferrer" onclick="closeMob()" style="color:var(--red);display:flex;align-items:center;gap:10px"><i class="fas fa-grid-2" aria-hidden="true"></i> Área do Cliente</a>
   <a href="#services" onclick="closeMob()">Serviços</a>
   <a href="#why" onclick="closeMob()">Por que nós</a>
   <a href="#testi" onclick="closeMob()">Depoimentos</a>
@@ -486,6 +516,9 @@
         <a href="#contact">Contato</a>
       </nav>
       <div class="hdr-right">
+        <a href="https://appcondo-gt.web.app/home" class="btn btn-portal btn-sm" target="_blank" rel="noopener noreferrer" aria-label="Área do Cliente — acessar aplicativo">
+          <i class="fas fa-grid-2" aria-hidden="true"></i> Área do Cliente
+        </a>
         <a href="tel:6433224404" class="btn btn-outline btn-sm">
           <i class="fas fa-phone" aria-hidden="true"></i> (64) 3322-4404
         </a>
@@ -581,6 +614,30 @@
     </div>
   </div>
 </section>
+
+<!-- PORTAL STRIP -->
+<div id="portal-strip" role="complementary" aria-label="Acesso à Área do Cliente">
+  <div class="container">
+    <div class="portal-inner">
+      <div class="portal-left">
+        <div class="portal-app-icon" aria-hidden="true">
+          <i class="fas fa-grid-2"></i>
+        </div>
+        <div class="portal-info">
+          <strong>Área do Cliente — Grupo Tema</strong>
+          <span>Acesse documentos, relatórios e acompanhe sua empresa em tempo real</span>
+        </div>
+      </div>
+      <div class="portal-right">
+        <div class="portal-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> Disponível 24h</div>
+        <div class="portal-badge"><i class="fas fa-lock" aria-hidden="true"></i> Acesso seguro</div>
+        <a href="https://appcondo-gt.web.app/home" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i> Entrar no App
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- PROBLEMS -->
 <section id="problems" aria-labelledby="prob-title">
@@ -1041,6 +1098,7 @@
           <a href="#testi">Depoimentos</a>
           <a href="#faq">Perguntas frequentes</a>
           <a href="#contact">Contato</a>
+          <a href="https://appcondo-gt.web.app/home" target="_blank" rel="noopener noreferrer" style="color:var(--red);font-weight:700"><i class="fas fa-grid-2" aria-hidden="true" style="margin-right:6px"></i>Área do Cliente</a>
         </div>
       </nav>
       <div>
