@@ -1,12 +1,5 @@
 {
-  "name": "grupotema",
   "version": 2,
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/$1" }
-  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -30,14 +23,6 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
-        },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "https://grupotema.vercel.app"
-        },
-        {
-          "key": "Server",
-          "value": "Web Server"
         }
       ]
     }
