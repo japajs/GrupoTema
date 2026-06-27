@@ -7,10 +7,32 @@
   <meta name="theme-color" content="#0B2545">
   <title>Grupo Tema | Contabilidade que faz seu negócio crescer</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://grupotema.com.br">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Grupo Tema | Contabilidade que faz seu negócio crescer">
+  <meta property="og:description" content="Mais de 30 anos cuidando da contabilidade de empresas em Goiás. Abertura de empresa, folha de pagamento, IR e planejamento tributário.">
+  <meta property="og:url" content="https://grupotema.com.br">
+  <meta property="og:site_name" content="Grupo Tema Organização Contábil">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Grupo Tema | Contabilidade que faz seu negócio crescer">
+  <meta name="twitter:description" content="Mais de 30 anos cuidando da contabilidade de empresas em Goiás. Abertura de empresa, folha de pagamento, IR e planejamento tributário.">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Font Awesome (core + solid + brands — sem regular/light/duotone) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css" integrity="sha512-eBxzDWX6OiszkLv4+rzUiTP3FgBnDMJeDVkdN3PiCYjZZIUhdWu5aoBJEay8IiDSW+3womeUhVFRZ29c37S8tA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" integrity="sha512-jQcpw1zDugORx3f2JtUxXbX/Si4ktq488bmUvGB8Tz9BtlsEYN9hkN7SuaKlHa+4ME95k+hLfrn0mbYCrY/g/w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css" integrity="sha512-ym1f+T15aiJGZ1y6zs1XEpr8qheyBcOPqjFYNf2UfRmfIt5Pdsp7SD5O74fmsFB+rxxO6ejRqiooutodoNSjRQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <style>
     /* ── RESET ── */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -30,7 +52,7 @@
       --tr:.28s cubic-bezier(.4,0,.2,1);
     }
 
-    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden}
+    html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden}
     body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--g700);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
@@ -129,7 +151,8 @@
       -webkit-backdrop-filter:blur(20px);
       backdrop-filter:blur(20px);
       padding:13px 0;
-      box-shadow:0 2px 24px rgba(0,0,0,.22)
+      box-shadow:0 2px 24px rgba(0,0,0,.22);
+      will-change:transform
     }
     .hdr-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
     .logo{display:flex;align-items:center;gap:12px;color:#fff}
@@ -181,6 +204,7 @@
     /* ════════ HERO ════════ */
     #hero{
       min-height:100vh;
+      min-height:100svh;
       background:linear-gradient(135deg,var(--navy-d) 0%,var(--navy) 55%,#1a3c6c 100%);
       position:relative;display:flex;align-items:center;
       padding:150px 0 80px;overflow:hidden;
@@ -401,15 +425,13 @@
     .ft-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.1)}
     /* FIX: de .45 para .75 */
     .ft-tagline{font-size:14px;color:rgba(255,255,255,.75);line-height:1.7;max-width:280px;margin-top:14px}
-    /* FIX: de .42 para .65 */
-    .ft-col-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.09em;margin-bottom:18px}
+    .ft-col-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.8);text-transform:uppercase;letter-spacing:.09em;margin-bottom:18px}
     .ft-links{display:flex;flex-direction:column;gap:11px}
     /* FIX: de .6 para .85 */
     .ft-links a{font-size:14px;color:rgba(255,255,255,.85);transition:color .2s}
     .ft-links a:hover{color:#fff}
     .ft-bot{display:flex;align-items:center;justify-content:space-between;padding-top:24px;gap:20px;flex-wrap:wrap}
-    /* FIX: de .35 para .65 */
-    .ft-copy{font-size:13px;color:rgba(255,255,255,.65)}
+    .ft-copy{font-size:13px;color:rgba(255,255,255,.8)}
     .ft-badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.65);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:6px 14px}
     .ft-badge i{color:var(--red)}
 
@@ -419,18 +441,18 @@
     .trab-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
     .trab-tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--red);background:rgba(220,38,38,.12);border-radius:100px;padding:5px 14px;margin-bottom:16px}
     .trab-title{font-size:clamp(26px,4vw,38px);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1.2;margin-bottom:14px}
-    .trab-sub{font-size:16px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:28px}
+    .trab-sub{font-size:16px;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:28px}
     .trab-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
     .trab-item{display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(255,255,255,.85)}
     .trab-item i{color:var(--red);font-size:14px;flex-shrink:0}
     .trab-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:36px;text-align:center}
     .trab-card-icon{width:72px;height:72px;border-radius:20px;background:rgba(220,38,38,.15);display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--red);margin:0 auto 20px}
     .trab-card h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:10px}
-    .trab-card > p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:24px}
+    .trab-card > p{font-size:14px;color:rgba(255,255,255,.8);line-height:1.6;margin-bottom:24px}
     .trab-steps{display:flex;flex-direction:column;gap:14px;text-align:left;margin-bottom:28px}
     .trab-step{display:flex;align-items:flex-start;gap:12px}
     .trab-step-num{width:24px;height:24px;min-width:24px;border-radius:50%;background:var(--red);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
-    .trab-step-txt{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5}
+    .trab-step-txt{font-size:13px;color:rgba(255,255,255,.88);line-height:1.5}
 
     /* ════════ WHATSAPP FLOAT ════════ */
     .wa-float{position:fixed;bottom:30px;right:30px;z-index:900;display:flex;align-items:center}
@@ -454,6 +476,19 @@
     .wa-tip::after{content:'';position:absolute;top:50%;right:-6px;transform:translateY(-50%);border:6px solid transparent;border-right:none;border-left-color:#fff}
     .wa-float:hover .wa-tip,.wa-btn:focus-visible+.wa-tip{opacity:1}
     @keyframes waPulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.55);opacity:0}}
+
+    /* ── Nav / list resets ── */
+    #hdr nav ul{list-style:none;padding:0;margin:0;display:flex;align-items:center;gap:28px}
+    ul.hero-trust{list-style:none;padding:0;margin:0}
+    ul.ft-links{list-style:none;padding:0;margin:0}
+
+    /* ── Form validation ── */
+    .field-error{display:block;font-size:12px;color:var(--red);margin-top:4px}
+    [aria-invalid="true"]{border-color:var(--red)!important;box-shadow:0 0 0 3px rgba(220,38,38,.12)!important}
+
+    /* ── Footer privacy link ── */
+    .ft-privacy-link{color:rgba(255,255,255,.8);text-decoration:underline;transition:color .2s}
+    .ft-privacy-link:hover,.ft-privacy-link:focus-visible{color:#fff}
 
     /* ════════ REDUCED MOTION (FIX) ════════ */
     @media(prefers-reduced-motion:reduce){
@@ -506,6 +541,39 @@
       .stat-n{font-size:36px}
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["AccountingService", "LocalBusiness"],
+    "name": "Grupo Tema Organização Contábil",
+    "alternateName": "Grupo Tema",
+    "description": "Escritório contábil em Goiás com mais de 30 anos de experiência em contabilidade empresarial, abertura de empresa, folha de pagamento e planejamento tributário.",
+    "url": "https://grupotema.com.br",
+    "telephone": "+55-64-3322-4404",
+    "email": "temaorganizacaocontabil@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Goiás",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "14:00",
+        "closes": "18:00"
+      }
+    ],
+    "sameAs": ["https://www.instagram.com/grupotema94/"],
+    "areaServed": { "@type": "State", "name": "Goiás" }
+  }
+  </script>
 </head>
 <body>
 
@@ -558,14 +626,15 @@
           <span>Organização Contábil</span>
         </div>
       </a>
-      <!-- FIX: aria-label na nav -->
       <nav aria-label="Navegação principal">
-        <a href="#services">Serviços</a>
-        <a href="#why">Por que nós</a>
-        <a href="#how">Como funciona</a>
-        <a href="#testi">Depoimentos</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contato</a>
+        <ul>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#why">Por que nós</a></li>
+          <li><a href="#how">Como funciona</a></li>
+          <li><a href="#testi">Depoimentos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
       </nav>
       <div class="hdr-right">
         <a href="https://appcondo-gt.web.app/home" class="btn btn-portal btn-sm" target="_blank" rel="noopener noreferrer" aria-label="Área do Cliente — acessar aplicativo">
@@ -616,11 +685,11 @@
             Conheça os serviços <i class="fas fa-arrow-down" aria-hidden="true"></i>
           </a>
         </div>
-        <div class="hero-trust" aria-label="Garantias">
-          <div class="trust-item"><i class="fas fa-circle-check" aria-hidden="true"></i> Análise gratuita</div>
-          <div class="trust-item"><i class="fas fa-circle-check" aria-hidden="true"></i> Sem burocracia</div>
-          <div class="trust-item"><i class="fas fa-circle-check" aria-hidden="true"></i> Atendimento humanizado</div>
-        </div>
+        <ul class="hero-trust" aria-label="Garantias">
+          <li class="trust-item"><i class="fas fa-circle-check" aria-hidden="true"></i> Análise gratuita</li>
+          <li class="trust-item"><i class="fas fa-circle-check" aria-hidden="true"></i> Sem burocracia</li>
+          <li class="trust-item"><i class="fas fa-circle-check" aria-hidden="true"></i> Atendimento humanizado</li>
+        </ul>
       </div>
       <div class="hero-cards reveal" aria-hidden="true">
         <div class="mc">
@@ -734,7 +803,7 @@
       <p class="sec-sub">Do registro da sua empresa até o planejamento do crescimento — um único parceiro contábil, da abertura à expansão.</p>
     </div>
     <div class="srv-grid">
-      <article class="srv-card reveal">
+      <article class="srv-card reveal" id="srv-abertura">
         <div class="srv-icon" aria-hidden="true"><i class="fas fa-store"></i></div>
         <h3 class="srv-name">Abertura de Empresa</h3>
         <p class="srv-desc">Do sonho ao CNPJ. Cuidamos de todo o processo de registro, enquadramento societário e licenças iniciais para você começar do jeito certo.</p>
@@ -742,7 +811,7 @@
           <span class="srv-tag">Registro</span><span class="srv-tag">CNPJ</span><span class="srv-tag">Alvará</span>
         </div>
       </article>
-      <article class="srv-card reveal">
+      <article class="srv-card reveal" id="srv-contabilidade">
         <div class="srv-icon" aria-hidden="true"><i class="fas fa-chart-pie"></i></div>
         <h3 class="srv-name">Contabilidade Empresarial</h3>
         <p class="srv-desc">Escrituração contábil completa, balancetes, DRE e balanço patrimonial. Tenha clareza total sobre a saúde financeira da sua empresa.</p>
@@ -750,7 +819,7 @@
           <span class="srv-tag">Balanço</span><span class="srv-tag">DRE</span><span class="srv-tag">SPED</span>
         </div>
       </article>
-      <article class="srv-card reveal">
+      <article class="srv-card reveal" id="srv-dp">
         <div class="srv-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
         <h3 class="srv-name">Departamento Pessoal</h3>
         <p class="srv-desc">Folha de pagamento, eSocial, admissões, demissões, férias e 13º sem erros e sem estresse. Sua equipe em dia, sempre.</p>
@@ -758,7 +827,7 @@
           <span class="srv-tag">eSocial</span><span class="srv-tag">Folha</span><span class="srv-tag">FGTS</span>
         </div>
       </article>
-      <article class="srv-card reveal">
+      <article class="srv-card reveal" id="srv-tributario">
         <div class="srv-icon" aria-hidden="true"><i class="fas fa-scale-balanced"></i></div>
         <h3 class="srv-name">Planejamento Tributário</h3>
         <p class="srv-desc">Pague apenas o que é justo. Analisamos o regime mais vantajoso — Simples Nacional, Lucro Presumido ou Lucro Real — e maximizamos sua economia fiscal.</p>
@@ -766,7 +835,7 @@
           <span class="srv-tag">Simples</span><span class="srv-tag">Lucro Presumido</span><span class="srv-tag">Lucro Real</span>
         </div>
       </article>
-      <article class="srv-card reveal">
+      <article class="srv-card reveal" id="srv-ir">
         <div class="srv-icon" aria-hidden="true"><i class="fas fa-file-invoice-dollar"></i></div>
         <h3 class="srv-name">Imposto de Renda</h3>
         <p class="srv-desc">Declaração de IR para pessoa física e jurídica, MEI e microempresas. Entregamos no prazo, com revisão e sem risco de cair na malha fina.</p>
@@ -774,7 +843,7 @@
           <span class="srv-tag">IR PF</span><span class="srv-tag">IR PJ</span><span class="srv-tag">MEI</span>
         </div>
       </article>
-      <article class="srv-card reveal">
+      <article class="srv-card reveal" id="srv-consultoria">
         <div class="srv-icon" aria-hidden="true"><i class="fas fa-handshake"></i></div>
         <h3 class="srv-name">Consultoria Empresarial</h3>
         <p class="srv-desc">Decisões estratégicas baseadas em dados reais. Auxiliamos na estruturação societária, análise de viabilidade e preparação para crescimento.</p>
@@ -956,46 +1025,46 @@
       </div>
       <div class="faq-list reveal" role="list">
         <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a1">
+          <button class="faq-q" id="faq-btn1" aria-expanded="false" aria-controls="faq-a1">
             Como funciona a transição do meu contador atual?
             <span class="faq-tog" aria-hidden="true"><i class="fas fa-plus"></i></span>
           </button>
-          <div class="faq-a" id="faq-a1" role="region">Nós cuidamos de tudo. Entramos em contato com seu escritório anterior, solicitamos todos os documentos e registros, e realizamos a migração de forma transparente — sem ônus para você. O processo é rápido e você não precisa se preocupar com nada.</div>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-btn1">Nós cuidamos de tudo. Entramos em contato com seu escritório anterior, solicitamos todos os documentos e registros, e realizamos a migração de forma transparente — sem ônus para você. O processo é rápido e você não precisa se preocupar com nada.</div>
         </div>
         <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a2">
+          <button class="faq-q" id="faq-btn2" aria-expanded="false" aria-controls="faq-a2">
             Atendem empresas de todos os portes e segmentos?
             <span class="faq-tog" aria-hidden="true"><i class="fas fa-plus"></i></span>
           </button>
-          <div class="faq-a" id="faq-a2" role="region">Sim. Atendemos desde MEIs e microempresas até empresas de médio porte nos mais variados segmentos: comércio, serviços, indústria, saúde, educação, tecnologia e muito mais. Temos experiência com todos os regimes tributários vigentes.</div>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-btn2">Sim. Atendemos desde MEIs e microempresas até empresas de médio porte nos mais variados segmentos: comércio, serviços, indústria, saúde, educação, tecnologia e muito mais. Temos experiência com todos os regimes tributários vigentes.</div>
         </div>
         <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a3">
+          <button class="faq-q" id="faq-btn3" aria-expanded="false" aria-controls="faq-a3">
             Preciso ir até o escritório pessoalmente?
             <span class="faq-tog" aria-hidden="true"><i class="fas fa-plus"></i></span>
           </button>
-          <div class="faq-a" id="faq-a3" role="region">Não necessariamente. Trabalhamos de forma digital — documentos podem ser enviados por e-mail, WhatsApp ou plataformas na nuvem. Para quem prefere o atendimento presencial, também estamos à disposição em nosso escritório.</div>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-btn3">Não necessariamente. Trabalhamos de forma digital — documentos podem ser enviados por e-mail, WhatsApp ou plataformas na nuvem. Para quem prefere o atendimento presencial, também estamos à disposição em nosso escritório.</div>
         </div>
         <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a4">
+          <button class="faq-q" id="faq-btn4" aria-expanded="false" aria-controls="faq-a4">
             Qual o custo mensal dos serviços contábeis?
             <span class="faq-tog" aria-hidden="true"><i class="fas fa-plus"></i></span>
           </button>
-          <div class="faq-a" id="faq-a4" role="region">Os valores variam de acordo com o porte da empresa, regime tributário, volume de notas fiscais e complexidade das operações. Fazemos uma análise gratuita e apresentamos uma proposta personalizada sem compromisso. Fale conosco para receber um orçamento.</div>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-btn4">Os valores variam de acordo com o porte da empresa, regime tributário, volume de notas fiscais e complexidade das operações. Fazemos uma análise gratuita e apresentamos uma proposta personalizada sem compromisso. Fale conosco para receber um orçamento.</div>
         </div>
         <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a5">
+          <button class="faq-q" id="faq-btn5" aria-expanded="false" aria-controls="faq-a5">
             Como funciona o planejamento tributário?
             <span class="faq-tog" aria-hidden="true"><i class="fas fa-plus"></i></span>
           </button>
-          <div class="faq-a" id="faq-a5" role="region">Fazemos uma análise detalhada das receitas, despesas e atividades da sua empresa para identificar o regime tributário mais vantajoso e eventuais oportunidades de economia fiscal legais. O objetivo é sempre reduzir a carga tributária de forma segura e sustentável.</div>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-btn5">Fazemos uma análise detalhada das receitas, despesas e atividades da sua empresa para identificar o regime tributário mais vantajoso e eventuais oportunidades de economia fiscal legais. O objetivo é sempre reduzir a carga tributária de forma segura e sustentável.</div>
         </div>
         <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a6">
+          <button class="faq-q" id="faq-btn6" aria-expanded="false" aria-controls="faq-a6">
             Como é feito o atendimento pós-contratação?
             <span class="faq-tog" aria-hidden="true"><i class="fas fa-plus"></i></span>
           </button>
-          <div class="faq-a" id="faq-a6" role="region">Cada cliente tem um contador responsável dedicado. O contato pode ser feito por telefone, WhatsApp ou e-mail. Enviamos relatórios periódicos e alertas sobre obrigações futuras para que você esteja sempre informado sobre a situação da empresa.</div>
+          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-btn6">Cada cliente tem um contador responsável dedicado. O contato pode ser feito por telefone, WhatsApp ou e-mail. Enviamos relatórios periódicos e alertas sobre obrigações futuras para que você esteja sempre informado sobre a situação da empresa.</div>
         </div>
       </div>
     </div>
@@ -1029,7 +1098,7 @@
           <h2 class="sec-title" id="contact-title">Envie uma <span>mensagem</span></h2>
           <p class="sec-sub">Preencha o formulário e entraremos em contato em até 24 horas. Para atendimento imediato, use o WhatsApp.</p>
         </div>
-        <form class="form-grid" id="contactForm" onsubmit="handleForm(event)" novalidate>
+        <form class="form-grid" id="contactForm" novalidate>
           <div class="fg">
             <label for="f-nome">Nome completo <abbr title="campo obrigatório">*</abbr></label>
             <input type="text" id="f-nome" name="nome" placeholder="João Silva" required autocomplete="name">
@@ -1047,12 +1116,12 @@
             <label for="f-tipo">Tipo de empresa</label>
             <select id="f-tipo" name="tipo" autocomplete="organization">
               <option value="">Selecione...</option>
-              <option>MEI</option>
-              <option>Microempresa (ME)</option>
-              <option>Empresa de Pequeno Porte (EPP)</option>
-              <option>Empresa de Médio/Grande Porte</option>
-              <option>Pessoa Física</option>
-              <option>Ainda não tenho empresa</option>
+              <option value="MEI">MEI</option>
+              <option value="ME">Microempresa (ME)</option>
+              <option value="EPP">Empresa de Pequeno Porte (EPP)</option>
+              <option value="medio-grande">Empresa de Médio/Grande Porte</option>
+              <option value="pf">Pessoa Física</option>
+              <option value="nova">Ainda não tenho empresa</option>
             </select>
           </div>
           <div class="fg full">
@@ -1067,7 +1136,7 @@
           </div>
         </form>
         <!-- FIX: aria-live para leitor de tela anunciar sucesso -->
-        <div id="formSuccess" class="form-success" role="alert" aria-live="polite">
+        <div id="formSuccess" class="form-success" role="alert" aria-live="polite" tabindex="-1">
           <i class="fas fa-circle-check" aria-hidden="true"></i> Mensagem enviada! Entraremos em contato em breve.
         </div>
       </div>
@@ -1185,34 +1254,34 @@
       </div>
       <nav aria-label="Links de serviços">
         <div class="ft-col-title">Serviços</div>
-        <div class="ft-links">
-          <a href="#services">Abertura de Empresa</a>
-          <a href="#services">Contabilidade Empresarial</a>
-          <a href="#services">Departamento Pessoal</a>
-          <a href="#services">Planejamento Tributário</a>
-          <a href="#services">Imposto de Renda</a>
-          <a href="#services">Consultoria Empresarial</a>
-        </div>
+        <ul class="ft-links">
+          <li><a href="#srv-abertura">Abertura de Empresa</a></li>
+          <li><a href="#srv-contabilidade">Contabilidade Empresarial</a></li>
+          <li><a href="#srv-dp">Departamento Pessoal</a></li>
+          <li><a href="#srv-tributario">Planejamento Tributário</a></li>
+          <li><a href="#srv-ir">Imposto de Renda</a></li>
+          <li><a href="#srv-consultoria">Consultoria Empresarial</a></li>
+        </ul>
       </nav>
       <nav aria-label="Links da empresa">
         <div class="ft-col-title">Empresa</div>
-        <div class="ft-links">
-          <a href="#why">Sobre nós</a>
-          <a href="#how">Como funciona</a>
-          <a href="#testi">Depoimentos</a>
-          <a href="#faq">Perguntas frequentes</a>
-          <a href="#contact">Contato</a>
-          <a href="#trabalhe">Trabalhe conosco</a>
-          <a href="https://appcondo-gt.web.app/home" target="_blank" rel="noopener noreferrer" style="color:var(--red);font-weight:700"><i class="fas fa-right-to-bracket" aria-hidden="true" style="margin-right:6px"></i>Área do Cliente</a>
-        </div>
+        <ul class="ft-links">
+          <li><a href="#why">Sobre nós</a></li>
+          <li><a href="#how">Como funciona</a></li>
+          <li><a href="#testi">Depoimentos</a></li>
+          <li><a href="#faq">Perguntas frequentes</a></li>
+          <li><a href="#contact">Contato</a></li>
+          <li><a href="#trabalhe">Trabalhe conosco</a></li>
+          <li><a href="https://appcondo-gt.web.app/home" target="_blank" rel="noopener noreferrer" style="color:var(--red);font-weight:700"><i class="fas fa-right-to-bracket" aria-hidden="true" style="margin-right:6px"></i>Área do Cliente</a></li>
+        </ul>
       </nav>
       <div>
         <div class="ft-col-title">Contato</div>
-        <div class="ft-links">
-          <a href="tel:6433224404"><i class="fas fa-phone" aria-hidden="true" style="width:14px;margin-right:6px"></i>(64) 3322-4404</a>
-          <a href="https://wa.me/556481469800" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true" style="width:14px;margin-right:6px"></i>(64) 8146-9800</a>
-          <a href="mailto:temaorganizacaocontabil@gmail.com"><i class="fas fa-envelope" aria-hidden="true" style="width:14px;margin-right:6px"></i>Enviar e-mail</a>
-        </div>
+        <ul class="ft-links">
+          <li><a href="tel:6433224404"><i class="fas fa-phone" aria-hidden="true" style="width:14px;margin-right:6px"></i>(64) 3322-4404</a></li>
+          <li><a href="https://wa.me/556481469800" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true" style="width:14px;margin-right:6px"></i>(64) 8146-9800</a></li>
+          <li><a href="mailto:temaorganizacaocontabil@gmail.com"><i class="fas fa-envelope" aria-hidden="true" style="width:14px;margin-right:6px"></i>Enviar e-mail</a></li>
+        </ul>
         <div class="social-row" style="margin-top:20px">
           <a href="https://www.instagram.com/grupotema94/" class="soc" aria-label="Instagram do Grupo Tema" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
           <a href="https://wa.me/556481469800" class="soc" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
@@ -1220,7 +1289,7 @@
       </div>
     </div>
     <div class="ft-bot">
-      <p class="ft-copy">© 2026 Grupo Tema Organização Contábil. Todos os direitos reservados. CNPJ: 14.850.931/0001-93 · <a href="privacidade.html" style="color:rgba(255,255,255,.65);text-decoration:underline;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.65)'">Política de Privacidade</a></p>
+      <p class="ft-copy">© 2026 Grupo Tema Organização Contábil. Todos os direitos reservados. CNPJ: 14.850.931/0001-93 · <a href="privacidade.html" class="ft-privacy-link">Política de Privacidade</a></p>
       <div class="ft-badge"><i class="fas fa-shield-halved" aria-hidden="true"></i> Site seguro e profissional</div>
     </div>
   </div>
@@ -1250,10 +1319,28 @@
     if (topbar) topbar.classList.toggle('hidden', scrolled);
   }, { passive: true });
 
-  // ── Mobile menu + FIX: aria-expanded + focus trap
+  // ── Mobile menu + focus trap
   const hambBtn  = document.getElementById('hambBtn');
   const mobNav   = document.getElementById('mobNav');
   const mobClose = document.getElementById('mobClose');
+
+  function getFocusable() {
+    return Array.from(mobNav.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    ));
+  }
+
+  function trapFocus(e) {
+    if (e.key !== 'Tab') return;
+    const focusable = getFocusable();
+    const first = focusable[0];
+    const last  = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  }
 
   function openMob() {
     hambBtn.setAttribute('aria-expanded', 'true');
@@ -1261,6 +1348,7 @@
     mobNav.classList.add('open');
     document.body.style.overflow = 'hidden';
     mobClose.focus();
+    mobNav.addEventListener('keydown', trapFocus);
   }
 
   function closeMob() {
@@ -1269,19 +1357,18 @@
     mobNav.classList.remove('open');
     document.body.style.overflow = '';
     hambBtn.focus();
+    mobNav.removeEventListener('keydown', trapFocus);
   }
 
   hambBtn.addEventListener('click', () => {
     mobNav.classList.contains('open') ? closeMob() : openMob();
   });
   mobClose.addEventListener('click', closeMob);
-
-  // Fechar com Esc
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && mobNav.classList.contains('open')) closeMob();
   });
 
-  // ── Scroll reveal (FIX: aplica js-ready só se JS estiver ativo)
+  // ── Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   reveals.forEach(el => el.classList.add('js-ready'));
 
@@ -1295,38 +1382,37 @@
   }, { threshold: 0.08 });
   reveals.forEach(el => ro.observe(el));
 
-  // ── Counter animation
+  // ── Counter animation (requestAnimationFrame)
+  function animateCount(el, end, duration) {
+    const startTime = performance.now();
+    function frame(now) {
+      const elapsed  = Math.min(now - startTime, duration);
+      const progress = elapsed / duration;
+      el.textContent = Math.round(progress * end);
+      if (elapsed < duration) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
   const counters = document.querySelectorAll('.count');
   const co = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const el  = entry.target;
-      const end = parseInt(el.dataset.to, 10);
-      const dur = 1400;
-      const step = 16;
-      const inc  = end / (dur / step);
-      let cur = 0;
-      const timer = setInterval(() => {
-        cur += inc;
-        if (cur >= end) { cur = end; clearInterval(timer); }
-        el.textContent = Math.round(cur);
-      }, step);
-      co.unobserve(el);
+      animateCount(entry.target, parseInt(entry.target.dataset.to, 10), 1400);
+      co.unobserve(entry.target);
     });
   }, { threshold: 0.5 });
   counters.forEach(el => co.observe(el));
 
-  // ── FAQ accordion (FIX: aria-expanded gerenciado)
+  // ── FAQ accordion
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item   = btn.closest('.faq-item');
       const isOpen = item.classList.contains('open');
-      // Fecha todos
       document.querySelectorAll('.faq-item.open').forEach(i => {
         i.classList.remove('open');
         i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
       });
-      // Abre o clicado
       if (!isOpen) {
         item.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
@@ -1334,12 +1420,47 @@
     });
   });
 
-  // ── Contact form → abre WhatsApp
+  // ── Contact form: validação + WhatsApp
   function handleForm(e) {
     e.preventDefault();
-    const form = document.getElementById('contactForm');
+    const form = e.target;
     const data = new FormData(form);
-    const msg  = `Olá!%20Vim%20pelo%20site.%0A%0A*Nome:*%20${encodeURIComponent(data.get('nome'))}%0A*Tel:*%20${encodeURIComponent(data.get('tel'))}%0A*E-mail:*%20${encodeURIComponent(data.get('email'))}%0A*Empresa:*%20${encodeURIComponent(data.get('tipo') || 'Não informado')}%0A*Mensagem:*%20${encodeURIComponent(data.get('msg') || 'Gostaria de mais informações.')}`;
+
+    form.querySelectorAll('.field-error').forEach(el => el.remove());
+    form.querySelectorAll('[aria-invalid]').forEach(el => {
+      el.removeAttribute('aria-invalid');
+      el.removeAttribute('aria-describedby');
+    });
+
+    const checks = [
+      { id: 'f-nome',  val: data.get('nome'),  msg: 'Informe seu nome completo.' },
+      { id: 'f-tel',   val: data.get('tel'),   msg: 'Informe seu telefone ou WhatsApp.' },
+      { id: 'f-email', val: data.get('email'), msg: 'Informe um e-mail válido.',
+        extra: v => !v.includes('@') },
+    ];
+
+    const errors = checks.filter(c =>
+      !c.val || !c.val.trim() || (c.extra && c.extra(c.val))
+    );
+
+    if (errors.length) {
+      errors.forEach(({ id, msg }) => {
+        const input  = document.getElementById(id);
+        const errId  = id + '-err';
+        input.setAttribute('aria-invalid', 'true');
+        input.setAttribute('aria-describedby', errId);
+        const span   = document.createElement('span');
+        span.id      = errId;
+        span.className = 'field-error';
+        span.setAttribute('role', 'alert');
+        span.textContent = msg;
+        input.closest('.fg').appendChild(span);
+      });
+      document.getElementById(errors[0].id).focus();
+      return;
+    }
+
+    const msg = `Olá!%20Vim%20pelo%20site.%0A%0A*Nome:*%20${encodeURIComponent(data.get('nome'))}%0A*Tel:*%20${encodeURIComponent(data.get('tel'))}%0A*E-mail:*%20${encodeURIComponent(data.get('email'))}%0A*Empresa:*%20${encodeURIComponent(data.get('tipo') || 'Não informado')}%0A*Mensagem:*%20${encodeURIComponent(data.get('msg') || 'Gostaria de mais informações.')}`;
     window.open(`https://wa.me/556481469800?text=${msg}`, '_blank', 'noopener');
     form.style.display = 'none';
     const suc = document.getElementById('formSuccess');
@@ -1347,15 +1468,16 @@
     suc.focus();
   }
 
-  // ── Smooth scroll respeitando prefers-reduced-motion
+  document.getElementById('contactForm').addEventListener('submit', handleForm);
+
+  // ── Smooth scroll
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
       if (!target) return;
       e.preventDefault();
-      const offset = 80;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      const top = target.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top, behavior: prefersReduced ? 'auto' : 'smooth' });
     });
   });
