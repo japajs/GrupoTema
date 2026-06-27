@@ -482,13 +482,20 @@
     ul.hero-trust{list-style:none;padding:0;margin:0}
     ul.ft-links{list-style:none;padding:0;margin:0}
 
-    /* ── Prevenir overflow horizontal em grids (min-content > viewport) ── */
+    /* ── Prevenir overflow horizontal (min-content > viewport) ── */
+    /* Grids */
     .contact-inner > *,.form-grid > *,
     .hero-inner > *,.why-inner > *,.faq-inner > *,
     .trab-inner > *,.prob-grid > *,.srv-grid > *,
-    .testi-grid > *,.ft-top > *{min-width:0}
+    .testi-grid > *,.ft-top > *,
+    .stats-grid > *,.why-vis > *,ol.steps > *{min-width:0}
+    /* Flex rows: wrapper de texto sem largura explícita */
+    .ci-item > div:last-child,
+    .t-author > div:last-child,
+    .feat > .feat-body,
+    .trab-step > .trab-step-txt{min-width:0}
+    /* Strings longas sem espaço */
     .ci-val,.ci-val a,.sec-sub,.prob-text,.srv-desc{overflow-wrap:break-word}
-    .ci-item > div:last-child{min-width:0}
 
     /* ── Form validation ── */
     .field-error{display:block;font-size:12px;color:var(--red);margin-top:4px}
